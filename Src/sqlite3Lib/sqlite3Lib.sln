@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite3Lib", "sqlite3Lib.vcxproj", "{EF5D778C-67E2-4077-A44E-F9C441DEF88B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite3Dll", "sqlite3Dll.vcxproj", "{DADE659E-A707-4222-8542-095F6596FB39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		DebugMT|x64 = DebugMT|x64
+		DebugMT|x86 = DebugMT|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseMT|x64 = ReleaseMT|x64
+		ReleaseMT|x86 = ReleaseMT|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Debug|x64.ActiveCfg = Debug|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Debug|x64.Build.0 = Debug|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Debug|x86.ActiveCfg = Debug|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Debug|x86.Build.0 = Debug|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.DebugMT|x64.ActiveCfg = DebugMT|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.DebugMT|x64.Build.0 = DebugMT|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.DebugMT|x86.ActiveCfg = DebugMT|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.DebugMT|x86.Build.0 = DebugMT|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Release|x64.ActiveCfg = Release|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Release|x64.Build.0 = Release|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Release|x86.ActiveCfg = Release|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.Release|x86.Build.0 = Release|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.ReleaseMT|x64.ActiveCfg = ReleaseMT|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.ReleaseMT|x64.Build.0 = ReleaseMT|x64
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.ReleaseMT|x86.ActiveCfg = ReleaseMT|Win32
+		{EF5D778C-67E2-4077-A44E-F9C441DEF88B}.ReleaseMT|x86.Build.0 = ReleaseMT|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.Debug|x64.ActiveCfg = Debug|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.Debug|x64.Build.0 = Debug|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.Debug|x86.ActiveCfg = Debug|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.Debug|x86.Build.0 = Debug|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.DebugMT|x64.ActiveCfg = DebugMT|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.DebugMT|x64.Build.0 = DebugMT|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.DebugMT|x86.ActiveCfg = DebugMT|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.DebugMT|x86.Build.0 = DebugMT|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.Release|x64.ActiveCfg = Release|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.Release|x64.Build.0 = Release|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.Release|x86.ActiveCfg = Release|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.Release|x86.Build.0 = Release|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x64.ActiveCfg = ReleaseMT|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x64.Build.0 = ReleaseMT|x64
+		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x86.ActiveCfg = ReleaseMT|Win32
+		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x86.Build.0 = ReleaseMT|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FA8213D-61CD-4F26-A933-F55E535DB577}
+	EndGlobalSection
+EndGlobal
