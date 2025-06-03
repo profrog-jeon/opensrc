@@ -1,0 +1,28 @@
+참고: https://m.blog.naver.com/espeniel/221845133507
+
+1. 개인키생성: openssl genrsa -des3 -out server.key 2048
+ - 비밀번호: Arrestium!1-ssl
+
+2. 인증요청서 생성
+Country Name (2 letter code) [XX]:​KR
+State or Province Name (full name) []:​Gyeonggido
+Locality Name (eg, city) [Default City]:​Bundanggu
+Organization Name (eg, company) [Default Company Ltd]:Akdan
+Organizational Unit Name (eg, section) []:​rnd
+Common Name (eg, your name or your server's hostname) []:www.akdan.co.kr
+Email Address []:support@akdan.co.kr
+
+A challenge password []:
+An optional company name []:
+* 그냥 패스 enter, enter
+
+3. 개인키에서 패스워드 제거
+[root@localhost ssl]# cp server.key server.key.origin
+[root@localhost ssl]# openssl rsa -in server.key.origin -out server.key
+Enter pass phrase for server.key.origin:
+
+원본은 origin 으로 대체 되었고, server.key 가 치환 되었다. 용량이 조금 작다.
+
+4. 인증서 생성: openssl x509 -req -days 3650 -in server.csr -signkey server.key -out server.crt
+
+5. crt, csr, key 가 각각 생성 되었다.
