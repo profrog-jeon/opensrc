@@ -1,0 +1,5 @@
+# 모든 lib 파일을 LFS로 관리
+*.lib filter=lfs diff=lfs merge=lfs -text
+
+# 특정 디렉터리 내의 모든 PNG 파일을 LFS로 관리
+#assets/images/*.png filter=lfs diff=lfs merge=lfs -text
