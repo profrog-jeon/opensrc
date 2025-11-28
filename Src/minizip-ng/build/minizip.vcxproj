@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMT|x64">
+      <Configuration>DebugMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|x64">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>minizip</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">minizip</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">minizip</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">minizip</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">minizip</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_STDINT_H;HAVE_INTTYPES_H;NO_FSEEKO;NO_SYMLINK;NO_READLINK;HAVE_ZLIB;ZLIB_COMPAT;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;HAVE_PKCRYPT;HAVE_WZAES;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Strawberry\c\include;D:\GIT\opensrc\Src\minizip-ng;D:\GIT\opensrc\Src\minizip-ng\compat;D:\GIT\opensrc\Src\minizip-ng\build;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_crypt.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_os.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_buf.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_mem.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_split.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_zip.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_zip_rw.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_zlib.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_os_win32.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_os_win32.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_crypt_winvista.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_crypt_winxp.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_pkcrypt.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_wzaes.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\compat\ioapi.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\compat\unzip.c" />
+    <ClCompile Include="D:\GIT\opensrc\Src\minizip-ng\compat\zip.c" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_os.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_crypt.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_buf.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_mem.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_split.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_os.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_zip.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_zip_rw.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_zlib.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_pkcrypt.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\mz_strm_wzaes.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\compat\ioapi.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\compat\unzip.h" />
+    <ClInclude Include="D:\GIT\opensrc\Src\minizip-ng\compat\zip.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
