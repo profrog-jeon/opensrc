@@ -15,7 +15,7 @@
 #if !defined(ZLIB_COMPAT)
 #  include "zlib-ng.h"
 #else
-#  include "zlib.h"
+#  include <zlib/zlib.h>
 #endif
 
 /***************************************************************************/

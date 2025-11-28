@@ -17,7 +17,7 @@
 #    include "zlib-ng.h"
 #    define ZLIB_PREFIX(x) zng_##x
 #  else
-#    include "zlib.h"
+#    include <zlib/zlib.h>
 #    define ZLIB_PREFIX(x) x
 #  endif
 #elif defined(HAVE_LZMA)
