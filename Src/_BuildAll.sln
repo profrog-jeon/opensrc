@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libcurl", "curl\libcurl.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqlite3", "sqlite3Lib\sqlite3.vcxproj", "{DADE659E-A707-4222-8542-095F6596FB39}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minizip", "minizip-ng\build\minizip.vcxproj", "{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,22 @@ Global
 		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x64.Build.0 = ReleaseMT|x64
 		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x86.ActiveCfg = ReleaseMT|Win32
 		{DADE659E-A707-4222-8542-095F6596FB39}.ReleaseMT|x86.Build.0 = ReleaseMT|Win32
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Debug|x64.ActiveCfg = Debug|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Debug|x64.Build.0 = Debug|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Debug|x86.ActiveCfg = Debug|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Debug|x86.Build.0 = Debug|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.DebugMT|x64.ActiveCfg = MinSizeRel|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.DebugMT|x64.Build.0 = MinSizeRel|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.DebugMT|x86.ActiveCfg = MinSizeRel|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.DebugMT|x86.Build.0 = MinSizeRel|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Release|x64.ActiveCfg = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Release|x64.Build.0 = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Release|x86.ActiveCfg = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.Release|x86.Build.0 = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.ReleaseMT|x64.ActiveCfg = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.ReleaseMT|x64.Build.0 = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.ReleaseMT|x86.ActiveCfg = Release|x64
+		{4B94C64C-DCDE-3917-96CE-99CCAC074ADE}.ReleaseMT|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

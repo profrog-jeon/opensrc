@@ -1,0 +1,2 @@
+윈도우: cmake .. -G "Visual Studio 17 2022" -A x64 -DMZ_ZLIB=ON -DMZ_BZIP2=OFF -DMZ_LZMA=OFF -DMZ_ZSTD=OFF
+리눅스: cmake ../minizip-ng-develop -DMZ_ZLIB=ON -DMZ_BZIP2=OFF -DMZ_LZMA=OFF -DMZ_ZSTD=OFF
