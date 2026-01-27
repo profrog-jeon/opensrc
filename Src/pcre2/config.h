@@ -1,6 +1,14 @@
 /* config.h for CMake builds */
 #define PCRE2_STATIC
 
+#if defined(UNICODE) && !defined(_WIN32)
+#define PCRE2_CODE_UNIT_WIDTH 32
+#elif defined(UNICODE16) || defined(UNICODE)
+#define PCRE2_CODE_UNIT_WIDTH 16
+#else
+#define PCRE2_CODE_UNIT_WIDTH 8
+#endif
+
 #define HAVE_ASSERT_H 1
 #define HAVE_BUILTIN_ASSUME 1
 /* #undef HAVE_BUILTIN_MUL_OVERFLOW */

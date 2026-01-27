@@ -39,6 +39,8 @@ POSSIBILITY OF SUCH DAMAGE.
 #ifndef PCRE2_H_IDEMPOTENT_GUARD
 #define PCRE2_H_IDEMPOTENT_GUARD
 
+#include "config.h"
+
 /* The current PCRE version information. */
 
 #define PCRE2_MAJOR           10
