@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMT|x64">
+      <Configuration>DebugMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|x64">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1EAFFC1B-FFFA-3998-A68A-B84CE61B6FB9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>pcre2-8-static</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;PCRE2_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;PCRE2_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;PCRE2_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;PCRE2_DEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild>
+      </MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <SupportJustMyCode>
+      </SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PCRE2_CODE_UNIT_WIDTH=8;PCRE2_STATIC;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>.\interface;.\src;..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule ../CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Building Custom Rule ../CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -S.. -B. --check-stamp-file ./CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -S.. -B. --check-stamp-file ./CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.31\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeInspectCLinker.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake;.\CMakeFiles\3.31.11\CMakeCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeRCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeSystem.cmake;.\libpcre2-8.pc.generator;.\libpcre2-posix.pc.generator;..\cmake\FindEditline.cmake;..\cmake\FindReadline.cmake;..\cmake\PCRE2CheckVscript.cmake;..\cmake\PCRE2UseSystemExtensions.cmake;..\cmake\PCRE2WarningAsError.cmake;..\cmake\pcre2-config.cmake.in;..\libpcre2-8.pc.in;..\libpcre2-posix.pc.in;..\pcre2-config.in;..\src\config-cmake.h.in;..\src\pcre2.h.in;..\src\pcre2_chartables.c.dist;..\src\pcre2posix.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.31\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeInspectCLinker.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake;.\CMakeFiles\3.31.11\CMakeCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeRCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeSystem.cmake;.\libpcre2-8.pc.generator;.\libpcre2-posix.pc.generator;..\cmake\FindEditline.cmake;..\cmake\FindReadline.cmake;..\cmake\PCRE2CheckVscript.cmake;..\cmake\PCRE2UseSystemExtensions.cmake;..\cmake\PCRE2WarningAsError.cmake;..\cmake\pcre2-config.cmake.in;..\libpcre2-8.pc.in;..\libpcre2-posix.pc.in;..\pcre2-config.in;..\src\config-cmake.h.in;..\src\pcre2.h.in;..\src\pcre2_chartables.c.dist;..\src\pcre2posix.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">.\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule ../CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Building Custom Rule ../CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -S.. -B. --check-stamp-file ./CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -S.. -B. --check-stamp-file ./CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.31\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeInspectCLinker.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake;.\CMakeFiles\3.31.11\CMakeCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeRCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeSystem.cmake;.\libpcre2-8.pc.generator;.\libpcre2-posix.pc.generator;..\cmake\FindEditline.cmake;..\cmake\FindReadline.cmake;..\cmake\PCRE2CheckVscript.cmake;..\cmake\PCRE2UseSystemExtensions.cmake;..\cmake\PCRE2WarningAsError.cmake;..\cmake\pcre2-config.cmake.in;..\libpcre2-8.pc.in;..\libpcre2-posix.pc.in;..\pcre2-config.in;..\src\config-cmake.h.in;..\src\pcre2.h.in;..\src\pcre2_chartables.c.dist;..\src\pcre2posix.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">C:\Program Files\CMake\share\cmake-3.31\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineCompilerSupport.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakePushCheckState.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\CrayClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\OrangeC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TIClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.31\Modules\FindBZip2.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeCommonLinkerInformation.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeDetermineLinkerId.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CMakeInspectCLinker.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Linker\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.31\Modules\WriteBasicConfigVersionFile.cmake;.\CMakeFiles\3.31.11\CMakeCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeRCCompiler.cmake;.\CMakeFiles\3.31.11\CMakeSystem.cmake;.\libpcre2-8.pc.generator;.\libpcre2-posix.pc.generator;..\cmake\FindEditline.cmake;..\cmake\FindReadline.cmake;..\cmake\PCRE2CheckVscript.cmake;..\cmake\PCRE2UseSystemExtensions.cmake;..\cmake\PCRE2WarningAsError.cmake;..\cmake\pcre2-config.cmake.in;..\libpcre2-8.pc.in;..\libpcre2-posix.pc.in;..\pcre2-config.in;..\src\config-cmake.h.in;..\src\pcre2.h.in;..\src\pcre2_chartables.c.dist;..\src\pcre2posix.h;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">.\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include=".\interface\pcre2.h" />
+    <ClCompile Include="..\src\pcre2_auto_possess.c" />
+    <ClCompile Include=".\src\pcre2_chartables.c" />
+    <ClCompile Include="..\src\pcre2_chkdint.c" />
+    <ClCompile Include="..\src\pcre2_compile.c" />
+    <ClCompile Include="..\src\pcre2_compile_cgroup.c" />
+    <ClCompile Include="..\src\pcre2_compile_class.c" />
+    <ClCompile Include="..\src\pcre2_config.c" />
+    <ClCompile Include="..\src\pcre2_context.c" />
+    <ClCompile Include="..\src\pcre2_convert.c" />
+    <ClCompile Include="..\src\pcre2_dfa_match.c" />
+    <ClCompile Include="..\src\pcre2_error.c" />
+    <ClCompile Include="..\src\pcre2_extuni.c" />
+    <ClCompile Include="..\src\pcre2_find_bracket.c" />
+    <ClCompile Include="..\src\pcre2_jit_compile.c" />
+    <ClCompile Include="..\src\pcre2_maketables.c" />
+    <ClCompile Include="..\src\pcre2_match.c" />
+    <ClCompile Include="..\src\pcre2_match_data.c" />
+    <ClCompile Include="..\src\pcre2_match_next.c" />
+    <ClCompile Include="..\src\pcre2_newline.c" />
+    <ClCompile Include="..\src\pcre2_ord2utf.c" />
+    <ClCompile Include="..\src\pcre2_pattern_info.c" />
+    <ClCompile Include="..\src\pcre2_script_run.c" />
+    <ClCompile Include="..\src\pcre2_serialize.c" />
+    <ClCompile Include="..\src\pcre2_string_utils.c" />
+    <ClCompile Include="..\src\pcre2_study.c" />
+    <ClCompile Include="..\src\pcre2_substitute.c" />
+    <ClCompile Include="..\src\pcre2_substring.c" />
+    <ClCompile Include="..\src\pcre2_tables.c" />
+    <ClCompile Include="..\src\pcre2_ucd.c" />
+    <ClCompile Include="..\src\pcre2_valid_utf.c" />
+    <ClCompile Include="..\src\pcre2_xclass.c" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
