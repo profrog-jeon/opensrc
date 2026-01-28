@@ -3,7 +3,6 @@
 REM =====================================
 REM ===========  LINUX BUILD  ===========
 REM =====================================
-RD /S /Q .\LinuxRelease
 RD /S /Q ..\Output\LinuxRelease
 mkdir ..\Output\LinuxRelease
 
