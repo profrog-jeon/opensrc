@@ -58,7 +58,7 @@ endforeach(SOURCE)
 ##############################################################
 ## Build setting
 ##############################################################
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../opensrc/Inc)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../../opensrc/Inc/pcre2)
 add_library(${TARGET_NAME}A OBJECT ${SOURCES})
 add_library(${TARGET_NAME}W OBJECT ${SOURCES})
 add_library(${TARGET_NAME}U OBJECT ${SOURCES})

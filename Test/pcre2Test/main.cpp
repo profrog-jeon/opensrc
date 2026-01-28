@@ -1,24 +1,24 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include <stdio.h>
 #include <string.h>
 
 int main(void) {
     pcre2_code* re;
-    std::tstring pattern = TEXT("[0-9]+");   // ¼ıÀÚ ÆĞÅÏ
+    std::tstring pattern = TEXT("[0-9]+");   // ìˆ«ì íŒ¨í„´
     std::tstring subject = TEXT("Hello123World456");
     int errornumber;
     PCRE2_SIZE erroroffset;
     pcre2_match_data* match_data;
     int rc;
 
-    // Á¤±Ô½Ä ÄÄÆÄÀÏ
+    // ì •ê·œì‹ ì»´íŒŒì¼
     re = pcre2_compile(
-        (PCRE2_SPTR)pattern.c_str(),               // ÆĞÅÏ
-        PCRE2_ZERO_TERMINATED, // ³Î Á¾·á ¹®ÀÚ¿­
-        0,                     // ¿É¼Ç
-        &errornumber,          // ¿¡·¯ ÄÚµå
-        &erroroffset,          // ¿¡·¯ À§Ä¡
-        NULL                   // ±âº» ÄÄÆÄÀÏ context
+        (PCRE2_SPTR)pattern.c_str(),               // íŒ¨í„´
+        PCRE2_ZERO_TERMINATED, // ë„ ì¢…ë£Œ ë¬¸ìì—´
+        0,                     // ì˜µì…˜
+        &errornumber,          // ì—ëŸ¬ ì½”ë“œ
+        &erroroffset,          // ì—ëŸ¬ ìœ„ì¹˜
+        NULL                   // ê¸°ë³¸ ì»´íŒŒì¼ context
     );
 
     if (re == NULL) {
@@ -28,18 +28,18 @@ int main(void) {
         return 1;
     }
 
-    // ¸ÅÄª µ¥ÀÌÅÍ »ı¼º
+    // ë§¤ì¹­ ë°ì´í„° ìƒì„±
     match_data = pcre2_match_data_create_from_pattern(re, NULL);
 
-    // ¹®ÀÚ¿­ ¸ÅÄª
+    // ë¬¸ìì—´ ë§¤ì¹­
     rc = pcre2_match(
-        re,             // ÄÄÆÄÀÏµÈ Á¤±Ô½Ä
-        (PCRE2_SPTR)subject.c_str(),        // ´ë»ó ¹®ÀÚ¿­
-        subject.length(), // ±æÀÌ
-        0,              // ½ÃÀÛ À§Ä¡
-        0,              // ¿É¼Ç
-        match_data,     // ¸ÅÄª °á°ú ÀúÀå
-        NULL            // ±âº» match context
+        re,             // ì»´íŒŒì¼ëœ ì •ê·œì‹
+        (PCRE2_SPTR)subject.c_str(),        // ëŒ€ìƒ ë¬¸ìì—´
+        subject.length(), // ê¸¸ì´
+        0,              // ì‹œì‘ ìœ„ì¹˜
+        0,              // ì˜µì…˜
+        match_data,     // ë§¤ì¹­ ê²°ê³¼ ì €ì¥
+        NULL            // ê¸°ë³¸ match context
     );
 
     if (rc < 0) {
@@ -52,7 +52,7 @@ int main(void) {
             subject.c_str() + ovector[0]);
     }
 
-    // ¸Ş¸ğ¸® ÇØÁ¦
+    // ë©”ëª¨ë¦¬ í•´ì œ
     pcre2_match_data_free(match_data);
     pcre2_code_free(re);
 
