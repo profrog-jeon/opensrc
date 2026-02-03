@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 set(TARGET_NAME sqlite3Lib)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DHAVE_FCNTL64=0 -D_FILE_OFFSET_BITS=64")	# ✅ sqlite3(fcntl64 문제 해결용)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../Build/LinuxRelease)
