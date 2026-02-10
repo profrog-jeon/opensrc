@@ -1,4 +1,4 @@
-/*
+﻿/*
 ** 2001-09-15
 **
 ** The author disclaims copyright to this source code.  In place of
@@ -105,6 +105,7 @@ extern "C" {
 */
 #define SQLITE_DEPRECATED
 #define SQLITE_EXPERIMENTAL
+#define SQLITE_DISABLE_LFS
 
 /*
 ** Ensure these symbols were not defined by some previous header file.

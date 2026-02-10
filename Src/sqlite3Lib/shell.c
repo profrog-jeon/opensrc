@@ -86,6 +86,7 @@
 /*
 ** Enable large-file support for fopen() and friends on unix.
 */
+#define SQLITE_DISABLE_LFS
 #ifndef SQLITE_DISABLE_LFS
 # define _LARGE_FILE       1
 # ifndef _FILE_OFFSET_BITS
