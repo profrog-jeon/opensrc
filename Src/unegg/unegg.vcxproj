@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugMT|Win32">
+      <Configuration>DebugMT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugMT|x64">
+      <Configuration>DebugMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|Win32">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|x64">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6DCFDA43-3DA8-45B9-BA4E-1EF80C025681}</ProjectGuid>
+    <RootNamespace>HwpParser</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27625.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules />
+    <CodeAnalysisRuleAssemblies />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Inc;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_BIND_TO_CURRENT_VCLIBS_VERSION=1;WIN64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cppcore.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\Lib\$(Platform)$(Configuration);$(ProjectDir)..\..\..\cppcore\Build\$(Platform)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="CommandLine.h" />
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="nest\algorithm\AZOCoder.h" />
+    <ClInclude Include="nest\algorithm\azo\AZO.h" />
+    <ClInclude Include="nest\algorithm\azo\AZOWrapper.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\BoolStateB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\DictionaryTableB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\EntropyBitProbB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\EntropyCodeB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\HistoryListB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\MainCodeB.h" />
+    <ClInclude Include="nest\algorithm\azo\Base\PredictProbB.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\Allocator.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\AZOOption.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\AZOPrivate.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\AZOType.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\BufferMan.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\MatchCodeTable.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\ProbCount.h" />
+    <ClInclude Include="nest\algorithm\azo\Common\x86Filter.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\AlphaCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\BitCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\BlockCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\BoolStateD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\DictionaryTableD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\DistanceCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\EntropyBitProbD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\EntropyCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\HistoryListD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\LengthCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\MainCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\MatchCodeD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\PredictProbD.h" />
+    <ClInclude Include="nest\algorithm\azo\Decoder\SymbolCodeD.h" />
+    <ClInclude Include="nest\algorithm\BZipCoder.h" />
+    <ClInclude Include="nest\algorithm\Coder.h" />
+    <ClInclude Include="nest\algorithm\crc32.hpp" />
+    <ClInclude Include="nest\algorithm\DeflateCoder.h" />
+    <ClInclude Include="nest\algorithm\LZMACoder.h" />
+    <ClInclude Include="nest\algorithm\StoreCoder.h" />
+    <ClInclude Include="nest\define.h" />
+    <ClInclude Include="nest\encryption\AESDecoder.h" />
+    <ClInclude Include="nest\encryption\Decoder.h" />
+    <ClInclude Include="nest\encryption\ZipDecoder.h" />
+    <ClInclude Include="nest\Events.h" />
+    <ClInclude Include="nest\format\ALZFormat.h" />
+    <ClInclude Include="nest\format\ALZFormatFactory.h" />
+    <ClInclude Include="nest\format\alz\ALZTypes.h" />
+    <ClInclude Include="nest\format\alz\File.h" />
+    <ClInclude Include="nest\format\alz\Global.h" />
+    <ClInclude Include="nest\format\EggFormat.h" />
+    <ClInclude Include="nest\format\EggFormatFactory.h" />
+    <ClInclude Include="nest\format\egg\Block.h" />
+    <ClInclude Include="nest\format\egg\BlockWrap.h" />
+    <ClInclude Include="nest\format\egg\CommentField.h" />
+    <ClInclude Include="nest\format\egg\Dummy.h" />
+    <ClInclude Include="nest\format\egg\EggTypes.h" />
+    <ClInclude Include="nest\format\egg\EncryptField.h" />
+    <ClInclude Include="nest\format\egg\ExtraField.h" />
+    <ClInclude Include="nest\format\egg\ExtraFieldWrap.h" />
+    <ClInclude Include="nest\format\egg\File.h" />
+    <ClInclude Include="nest\format\egg\FilenameField.h" />
+    <ClInclude Include="nest\format\egg\FileWrap.h" />
+    <ClInclude Include="nest\format\egg\Global.h" />
+    <ClInclude Include="nest\format\egg\PosixField.h" />
+    <ClInclude Include="nest\format\egg\SolidField.h" />
+    <ClInclude Include="nest\format\egg\SplitField.h" />
+    <ClInclude Include="nest\format\egg\WindowsField.h" />
+    <ClInclude Include="nest\format\Format.h" />
+    <ClInclude Include="nest\format\FormatFactory.h" />
+    <ClInclude Include="nest\format\Header.h" />
+    <ClInclude Include="nest\Info.h" />
+    <ClInclude Include="nest\nest.h" />
+    <ClInclude Include="nest\stream\FileInputStream.h" />
+    <ClInclude Include="nest\stream\FileOutputStream.h" />
+    <ClInclude Include="nest\stream\InputStream.h" />
+    <ClInclude Include="nest\stream\InputStreamLinker.h" />
+    <ClInclude Include="nest\stream\InputStreamRewinder.h" />
+    <ClInclude Include="nest\stream\OutputStream.h" />
+    <ClInclude Include="nest\third-party\algorithm\bzip2\bzlib.h" />
+    <ClInclude Include="nest\third-party\algorithm\bzip2\bzlib_private.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\7zBuf.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\7zCrc.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\7zFile.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\7zVersion.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\Alloc.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\Bcj2.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\Bra.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\CpuArch.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\LzFind.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\LzHash.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\LzmaDec.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\LzmaEnc.h" />
+    <ClInclude Include="nest\third-party\algorithm\lzma\Types.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\crc32.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\deflate.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\gzguts.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\inffast.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\inffixed.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\inflate.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\inftrees.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\trees.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\zconf.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\zlib.h" />
+    <ClInclude Include="nest\third-party\algorithm\zlib\zutil.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\aes.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\aesopt.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\fileenc.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\hmac.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\prng.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\pwd2key.h" />
+    <ClInclude Include="nest\third-party\encryption\aes\sha1.h" />
+    <ClInclude Include="nest\Utils.h" />
+    <ClInclude Include="nest\Workspace.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="unegg.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommandLine.cpp" />
+    <ClCompile Include="EventHandler.cpp" />
+    <ClCompile Include="nest\algorithm\AZOCoder.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\BoolStateB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\DictionaryTableB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\EntropyBitProbB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\EntropyCodeB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\HistoryListB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\MainCodeB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Base\PredictProbB.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Common\Allocator.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Common\BufferMan.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Common\ProbCount.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Common\x86Filter.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\AlphaCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\BitCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\BlockCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\BoolStateD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\DictionaryTableD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\DistanceCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\EntropyBitProbD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\EntropyCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\HistoryListD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\LengthCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\MainCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\MatchCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\PredictProbD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\Decoder\SymbolCodeD.cpp" />
+    <ClCompile Include="nest\algorithm\azo\unAZO.cpp" />
+    <ClCompile Include="nest\algorithm\BZipCoder.cpp" />
+    <ClCompile Include="nest\algorithm\Coder.cpp" />
+    <ClCompile Include="nest\algorithm\DeflateCoder.cpp" />
+    <ClCompile Include="nest\algorithm\LZMACoder.cpp" />
+    <ClCompile Include="nest\algorithm\StoreCoder.cpp" />
+    <ClCompile Include="nest\encryption\AESDecoder.cpp" />
+    <ClCompile Include="nest\encryption\Decoder.cpp" />
+    <ClCompile Include="nest\encryption\ZipDecoder.cpp" />
+    <ClCompile Include="nest\format\ALZFormat.cpp" />
+    <ClCompile Include="nest\format\ALZFormatFactory.cpp" />
+    <ClCompile Include="nest\format\alz\File.cpp" />
+    <ClCompile Include="nest\format\alz\Global_.cpp" />
+    <ClCompile Include="nest\format\EggFormat.cpp" />
+    <ClCompile Include="nest\format\EggFormatFactory.cpp" />
+    <ClCompile Include="nest\format\egg\Block.cpp" />
+    <ClCompile Include="nest\format\egg\BlockWrap.cpp" />
+    <ClCompile Include="nest\format\egg\Dummy.cpp" />
+    <ClCompile Include="nest\format\egg\ExtraField.cpp" />
+    <ClCompile Include="nest\format\egg\ExtraFieldWrap.cpp" />
+    <ClCompile Include="nest\format\egg\FileWrap.cpp" />
+    <ClCompile Include="nest\format\egg\File_.cpp" />
+    <ClCompile Include="nest\format\egg\Global.cpp" />
+    <ClCompile Include="nest\format\Format.cpp" />
+    <ClCompile Include="nest\format\Header.cpp" />
+    <ClCompile Include="nest\Info.cpp" />
+    <ClCompile Include="nest\stream\FileInputStream.cpp" />
+    <ClCompile Include="nest\stream\FileOutputStream.cpp" />
+    <ClCompile Include="nest\stream\InputStream.cpp" />
+    <ClCompile Include="nest\stream\InputStreamLinker.cpp" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\blocksort.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\bzlib.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\compress_.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\crctable.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\decompress.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\huffman.c" />
+    <ClCompile Include="nest\third-party\algorithm\bzip2\randtable.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\7zBuf.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\7zBuf2.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\7zCrc.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\7zFile.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\7zStream.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\Alloc.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\Bcj2.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\Bra.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\Bra86.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\BraIA64.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\CpuArch.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\LzFind.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\LzmaDec.c" />
+    <ClCompile Include="nest\third-party\algorithm\lzma\LzmaEnc.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\adler32.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\compress.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\crc32.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\deflate.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\gzclose.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\gzlib.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\gzread.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\gzwrite.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\infback.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\inffast.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\inflate.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\inftrees.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\trees.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\uncompr.c" />
+    <ClCompile Include="nest\third-party\algorithm\zlib\zutil.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\aescrypt.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\aeskey.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\aestab.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\fileenc.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\hmac.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\prng.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\pwd2key.c" />
+    <ClCompile Include="nest\third-party\encryption\aes\sha1.c" />
+    <ClCompile Include="nest\Utils.cpp" />
+    <ClCompile Include="nest\Workspace.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="UnEgg.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
