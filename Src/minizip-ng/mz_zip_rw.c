@@ -1540,13 +1540,16 @@ int32_t mz_zip_writer_add(void *handle, void *stream, mz_stream_read_cb read_cb)
         if (written > 0)
             current_pos += written;
         if (written < 0)
+        {
             err = written;
+            break;
+        }
 
         /* Update progress if enough time have passed */
         current_time = mz_os_ms_time();
         if ((current_time - update_time) > writer->progress_cb_interval_ms) {
             if (writer->progress_cb)
-                writer->progress_cb(writer, writer->progress_userdata, &writer->file_info, current_pos);
+                err = writer->progress_cb(writer, writer->progress_userdata, &writer->file_info, current_pos);
 
             update_pos = current_pos;
             update_time = current_time;
