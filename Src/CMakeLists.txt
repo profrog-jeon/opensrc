@@ -5,75 +5,90 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 
-function(copy_headers SOURCE_DIR DEST_DIR TARGET_NAME)
-    file(GLOB HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h")
-    add_custom_target(${TARGET_NAME} ALL)
+function(extract_zip ZIPFILE DIRNAME)
+    if(NOT EXISTS "${CMAKE_SOURCE_DIR}/${DIRNAME}")
+        message(STATUS "Extracting ${ZIPFILE}")
+        execute_process(
+            COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/${ZIPFILE}"
+            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            RESULT_VARIABLE ret
+        )
+        if(NOT ret EQUAL 0)
+            message(FATAL_ERROR "Failed to extract ${ZIPFILE}")
+        endif()
+    endif()
+endfunction()
+
+function(copy_headers SOURCE_DIR DEST_DIR TARGET)
+    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h")
     foreach(header ${HEADER_FILES})
-        add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E make_directory "${DEST_DIR}"
-            COMMAND ${CMAKE_COMMAND} -E copy_if_different
-                "${header}"
-                "${DEST_DIR}"
+        file(RELATIVE_PATH REL_PATH "${SOURCE_DIR}" "${header}")	# SOURCE_DIR 기준의 상대 경로
+        get_filename_component(REL_DIR "${REL_PATH}" DIRECTORY)		# 상대 경로에서 디렉터리만 추출
+        add_custom_command(TARGET ${TARGET} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory "${DEST_DIR}/${REL_DIR}"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header}" "${DEST_DIR}/${REL_PATH}"
         )
     endforeach()
 endfunction()
 
-#add_subdirectory(sqlite3Lib)
-#add_subdirectory(pcre2)
-#add_subdirectory(bzip2)
-#add_subdirectory(unegg)
-#add_custom_target(liblzma ALL
-#    COMMAND ./configure
-#        --disable-shared
-#        --enable-static
-#        --disable-xz
-#        --disable-xzdec
-#        --disable-lzmadec
-#        --disable-lzmainfo
-#    COMMAND make -j8
-#	COMMAND ${CMAKE_COMMAND} -E copy_if_different
-#        ${CMAKE_SOURCE_DIR}/liblzma/src/liblzma/.libs/liblzma.a
-#        ${OUTPUT_DIR}/liblzma.a
-#	COMMAND ${CMAKE_COMMAND} -E copy_directory
-#		${CMAKE_SOURCE_DIR}/liblzma/src/liblzma/api
-#		${CMAKE_SOURCE_DIR}/../Inc/lzma
-#    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/liblzma
-#)
+function(copy_headers2 SOURCE_DIR DEST_DIR TARGET_NAME)
+    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h")
+    add_custom_target(${TARGET_NAME} ALL)
+    foreach(header ${HEADER_FILES})
+        file(RELATIVE_PATH REL_PATH "${SOURCE_DIR}" "${header}")
+        get_filename_component(REL_DIR "${REL_PATH}" DIRECTORY)
+        add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E make_directory "${DEST_DIR}/${REL_DIR}"
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header}" "${DEST_DIR}/${REL_PATH}")
+    endforeach()
+endfunction()
 
-#if(NOT EXISTS "${CMAKE_SOURCE_DIR}/zstd/CMakeLists.txt")
-#    execute_process(
-#        COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/zstd.zip"
-#        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-#        RESULT_VARIABLE ret
-#    )
-#endif()
-#set(ZSTD_BUILD_PROGRAMS OFF CACHE BOOL "" FORCE)
-#set(ZSTD_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-#set(ZSTD_BUILD_SHARED OFF CACHE BOOL "" FORCE)
-#set(ZSTD_BUILD_STATIC ON CACHE BOOL "" FORCE)
-#add_subdirectory(zstd)
-#copy_headers(
-#    ${CMAKE_SOURCE_DIR}/zstd/lib
-#    ${CMAKE_SOURCE_DIR}/../Inc
-#    copy_zstd_headers
-#)
+add_subdirectory(sqlite3Lib)
+add_subdirectory(pcre2)
+add_subdirectory(bzip2)
+add_subdirectory(unegg)
 
-if(NOT EXISTS "${CMAKE_SOURCE_DIR}/lz4-1.10.0/CMakeLists.txt")
-    execute_process(
-        COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/lz4-1.10.0.zip"
-        WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-        RESULT_VARIABLE ret
-    )
-endif()
+extract_zip(liblzma-master.zip liblzma-master)
+set(LZMA_DIR "${CMAKE_SOURCE_DIR}/liblzma-master")
+add_custom_target(liblzma ALL
+    COMMAND ./configure
+        --disable-shared
+        --enable-static
+        --disable-xz
+        --disable-xzdec
+        --disable-lzmadec
+        --disable-lzmainfo
+    COMMAND make -j8
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${LZMA_DIR}/src/liblzma/.libs/liblzma.a
+        ${OUTPUT_DIR}/liblzma.a
+    WORKING_DIRECTORY ${LZMA_DIR}
+)
+copy_headers(
+    ${LZMA_DIR}/src/liblzma/api
+    ${CMAKE_SOURCE_DIR}/../Inc/lzma
+    liblzma
+)
 
+extract_zip(zstd.zip zstd)
+set(ZSTD_BUILD_PROGRAMS OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_SHARED OFF CACHE BOOL "" FORCE)
+set(ZSTD_BUILD_STATIC ON CACHE BOOL "" FORCE)
+add_subdirectory(zstd)
+copy_headers2(
+    ${CMAKE_SOURCE_DIR}/zstd/lib
+    ${CMAKE_SOURCE_DIR}/../Inc/zstd
+    copy_zstd_headers
+)
+
+extract_zip(lz4-1.10.0.zip lz4-1.10.0)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(LZ4_BUILD_CLI OFF CACHE BOOL "" FORCE)
 set(LZ4_BUILD_LEGACY_LZ4C OFF CACHE BOOL "" FORCE)
 set(LZ4_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 add_subdirectory(lz4-1.10.0/build/cmake)
-
-# 헤더 복사
-copy_headers(
+copy_headers2(
     ${CMAKE_SOURCE_DIR}/lz4-1.10.0/lib
     ${CMAKE_SOURCE_DIR}/../Inc
     copy_lz4_headers
