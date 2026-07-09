@@ -46,6 +46,8 @@ endfunction()
 add_subdirectory(sqlite3Lib)
 add_subdirectory(pcre2)
 add_subdirectory(bzip2)
+copy_headers2(${CMAKE_SOURCE_DIR}/bzip2 ${CMAKE_SOURCE_DIR}/../Inc copy_bzip2_headers)
+
 add_subdirectory(unegg)
 
 extract_zip(liblzma-master.zip liblzma-master)
@@ -92,4 +94,45 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/lz4-1.10.0/lib
     ${CMAKE_SOURCE_DIR}/../Inc
     copy_lz4_headers
+)
+
+extract_zip(libarchive-3.8.8.zip libarchive-3.8.8)
+
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
+set(ENABLE_TAR OFF CACHE BOOL "" FORCE)
+set(ENABLE_CPIO OFF CACHE BOOL "" FORCE)
+set(ENABLE_CAT OFF CACHE BOOL "" FORCE)
+set(ENABLE_UNZIP OFF CACHE BOOL "" FORCE)
+
+set(ENABLE_TEST OFF CACHE BOOL "" FORCE)
+set(ENABLE_ZLIB   ON CACHE BOOL "" FORCE)
+set(ENABLE_BZip2  ON CACHE BOOL "" FORCE)
+set(ENABLE_LIBXML2 OFF CACHE BOOL "" FORCE)
+set(ENABLE_EXPAT OFF CACHE BOOL "" FORCE)
+set(ENABLE_LZMA ON CACHE BOOL "" FORCE)
+set(ENABLE_LZ4 ON CACHE BOOL "" FORCE)
+set(ENABLE_ZSTD ON CACHE BOOL "" FORCE)
+
+set(ZLIB_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(BZIP2_INCLUDE_DIR    "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(LIBLZMA_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(LZ4_INCLUDE_DIR      "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(ZSTD_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(ZLIB_LIBRARY         "${OUTPUT_DIR}/libz.a" CACHE FILEPATH "" FORCE)
+set(BZIP2_LIBRARIES      "${OUTPUT_DIR}/libbz2.a" CACHE FILEPATH "" FORCE)
+set(LIBLZMA_LIBRARY      "${OUTPUT_DIR}/liblzma.a" CACHE FILEPATH "" FORCE)
+set(LZ4_LIBRARY          "${OUTPUT_DIR}/liblz4.a" CACHE FILEPATH "" FORCE)
+set(ZSTD_LIBRARY         "${OUTPUT_DIR}/libzstd.a" CACHE FILEPATH "" FORCE)
+
+include_directories(${CMAKE_SOURCE_DIR}/../Inc)
+include_directories(${CMAKE_SOURCE_DIR}/../Inc/zstd)
+include_directories(${CMAKE_SOURCE_DIR}/../Inc/lzma)
+link_directories(${CMAKE_SOURCE_DIR}/../Build/LinuxRelease)
+
+add_subdirectory(libarchive-3.8.8)
+copy_headers2(    
+    ${CMAKE_SOURCE_DIR}/libarchive-3.8.8/libarchive
+    ${CMAKE_SOURCE_DIR}/../Inc/archive
+	copy_libarchive_headers
 )
