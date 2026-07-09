@@ -97,7 +97,7 @@ copy_headers2(
 )
 
 extract_zip(libarchive-3.8.8.zip libarchive-3.8.8)
-
+set(ENABLE_WERROR OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
 set(ENABLE_TAR OFF CACHE BOOL "" FORCE)
