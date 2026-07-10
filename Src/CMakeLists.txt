@@ -97,6 +97,7 @@ copy_headers2(
 )
 
 extract_zip(libarchive-3.8.8.zip libarchive-3.8.8)
+
 set(ENABLE_WERROR OFF CACHE BOOL "" FORCE)
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
@@ -104,7 +105,6 @@ set(ENABLE_TAR OFF CACHE BOOL "" FORCE)
 set(ENABLE_CPIO OFF CACHE BOOL "" FORCE)
 set(ENABLE_CAT OFF CACHE BOOL "" FORCE)
 set(ENABLE_UNZIP OFF CACHE BOOL "" FORCE)
-
 set(ENABLE_TEST OFF CACHE BOOL "" FORCE)
 set(ENABLE_ZLIB   ON CACHE BOOL "" FORCE)
 set(ENABLE_BZip2  ON CACHE BOOL "" FORCE)
@@ -119,6 +119,7 @@ set(BZIP2_INCLUDE_DIR    "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
 set(LIBLZMA_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
 set(LZ4_INCLUDE_DIR      "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
 set(ZSTD_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+
 set(ZLIB_LIBRARY         "${OUTPUT_DIR}/libz.a" CACHE FILEPATH "" FORCE)
 set(BZIP2_LIBRARIES      "${OUTPUT_DIR}/libbz2.a" CACHE FILEPATH "" FORCE)
 set(LIBLZMA_LIBRARY      "${OUTPUT_DIR}/liblzma.a" CACHE FILEPATH "" FORCE)
@@ -130,7 +131,11 @@ include_directories(${CMAKE_SOURCE_DIR}/../Inc/zstd)
 include_directories(${CMAKE_SOURCE_DIR}/../Inc/lzma)
 link_directories(${CMAKE_SOURCE_DIR}/../Build/LinuxRelease)
 
+# -fPIC 옵션 활성화 (add_subdirectory 이전에 설정해야 하위 타겟에도 적용됨)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE)
+
 add_subdirectory(libarchive-3.8.8)
+
 copy_headers2(    
     ${CMAKE_SOURCE_DIR}/libarchive-3.8.8/libarchive
     ${CMAKE_SOURCE_DIR}/../Inc/archive
