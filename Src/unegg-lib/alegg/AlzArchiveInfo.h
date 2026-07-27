@@ -1,12 +1,12 @@
-#ifndef __ALZ_ARCHIVE_INFO_H__
+﻿#ifndef __ALZ_ARCHIVE_INFO_H__
 #define __ALZ_ARCHIVE_INFO_H__
 
-#include "../../common/IArchive.h"
-#include "../../common/ICrypto.h"
-#include "../../common/ICoder.h"
+#include "../../unegg-common/IArchive.h"
+#include "../../unegg-common/ICrypto.h"
+#include "../../unegg-common/ICoder.h"
 
-#include "../../common/UnknownImpl.h"
-#include "../../common/seven_stream.h"
+#include "../../unegg-common/UnknownImpl.h"
+#include "../../unegg-common/seven_stream.h"
 
 #include "alzstruct.h"
 

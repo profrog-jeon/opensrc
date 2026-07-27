@@ -121,6 +121,7 @@
     <ClInclude Include="MyType.h" />
     <ClInclude Include="MyWindows.h" />
     <ClInclude Include="PropVariant.h" />
+    <ClInclude Include="unegg-lib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="aes\aescrypt.c" />
@@ -168,7 +169,7 @@
     <ClCompile Include="bzip2\bzip2.c" />
     <ClCompile Include="bzip2\bzip2recover.c" />
     <ClCompile Include="bzip2\bzlib.c" />
-    <ClCompile Include="bzip2\compress.c" />
+    <ClCompile Include="bzip2\compress-bzip.c" />
     <ClCompile Include="bzip2\crctable.c" />
     <ClCompile Include="bzip2\decompress.c" />
     <ClCompile Include="bzip2\dlltest.c" />
@@ -215,7 +216,7 @@
     <ClCompile Include="lzma\LzmaDec.c" />
     <ClCompile Include="lzma\LzmaEnc.c" />
     <ClCompile Include="zlib\adler32.c" />
-    <ClCompile Include="zlib\compress.c" />
+    <ClCompile Include="zlib\compress-zlib.c" />
     <ClCompile Include="zlib\crc32.c" />
     <ClCompile Include="zlib\deflate.c" />
     <ClCompile Include="zlib\gzclose.c" />
@@ -231,5 +232,6 @@
     <ClCompile Include="zlib\zutil.c" />
     <ClCompile Include="MyWindows.cpp" />
     <ClCompile Include="PropVariant.cpp" />
+    <ClCompile Include="guiddef.cpp" />
   </ItemGroup>
 </Project>

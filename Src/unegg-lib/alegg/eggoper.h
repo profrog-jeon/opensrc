@@ -1,7 +1,7 @@
-#ifndef __EGG_OPERATOR_H__
+﻿#ifndef __EGG_OPERATOR_H__
 #define __EGG_OPERATOR_H__
 
-#include "../../common/seven_stream.h"
+#include "../../unegg-common/seven_stream.h"
 #include "eggstruct.h"
 
 namespace NArchive

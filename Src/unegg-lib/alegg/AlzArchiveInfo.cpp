@@ -1,15 +1,15 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "AlzArchiveInfo.h"
 
-#include "../../common/IPassword.h"
-#include "../../common/PropID.h"
+#include "../../unegg-common/IPassword.h"
+#include "../../unegg-common/PropID.h"
 #include "../PropVariant.h"
 
-#include "../../common/StoreCoder.h"
-#include "../../common/DeflateCoder.h"
-#include "../../common/CoderImpl.h"
+#include "../../unegg-common/StoreCoder.h"
+#include "../../unegg-common/DeflateCoder.h"
+#include "../../unegg-common/CoderImpl.h"
 
-#include "../../common/ZipCrypto.h"
+#include "../../unegg-common/ZipCrypto.h"
 
 #include "PropService.h"
 

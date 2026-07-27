@@ -53,5 +53,6 @@
     <ClInclude Include="UnknownImpl.h" />
     <ClInclude Include="ZipCrypto.h" />
     <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="unegg-common.h" />
   </ItemGroup>
 </Project>

@@ -139,27 +139,4 @@ Bool CPU_Is_InOrder()
     return True;
 }
 
-#if !defined(MY_CPU_AMD64) && defined(_WIN32)
-static Bool CPU_Sys_Is_SSE_Supported()
-{
-    OSVERSIONINFO vi;
-    vi.dwOSVersionInfoSize = sizeof(vi);
-    if (!GetVersionEx(&vi))
-    return False;
-    return (vi.dwMajorVersion >= 5);
-}
-#define CHECK_SYS_SSE_SUPPORT if (!CPU_Sys_Is_SSE_Supported()) return False;
-#else
-#define CHECK_SYS_SSE_SUPPORT
-#endif
-
-Bool CPU_Is_Aes_Supported()
-{
-    Cx86cpuid p;
-    CHECK_SYS_SSE_SUPPORT
-    if (!x86cpuid_CheckAndRead(&p))
-        return False;
-    return (p.c >> 25) & 1;
-}
-
 #endif

@@ -1,26 +1,26 @@
 ﻿#include "StdAfx.h"
 #include "EggArchiveInfo.h"
 
-#include "../../common/IArchive.h"
-#include "../../common/IPassword.h"
-#include "../../common/PropID.h"
+#include "../../unegg-common/IArchive.h"
+#include "../../unegg-common/IPassword.h"
+#include "../../unegg-common/PropID.h"
 #include "../PropVariant.h"
 
-#include "../../common/TimeService.h"
+#include "../../unegg-common/TimeService.h"
 
-#include "../../common/StoreCoder.h"
-#include "../../common/DeflateCoder.h"
-#include "../../common/Bzip2Coder.h"
-#include "../../common/AZOCoder.h"
-#include "../../common/LZMACoder.h"
-#include "../../common/CoderImpl.h"
+#include "../../unegg-common/StoreCoder.h"
+#include "../../unegg-common/DeflateCoder.h"
+#include "../../unegg-common/Bzip2Coder.h"
+#include "../../unegg-common/AZOCoder.h"
+#include "../../unegg-common/LZMACoder.h"
+#include "../../unegg-common/CoderImpl.h"
 
-#include "../../common/ZipCrypto.h"
-#include "../../common/AESCrypto.h"
-#include "../../common/LEACrypto.h"
+#include "../../unegg-common/ZipCrypto.h"
+#include "../../unegg-common/AESCrypto.h"
+#include "../../unegg-common/LEACrypto.h"
 
-#include "../../common/MultipleStream.h"
-#include "../../common/AZFileStreams.h"
+#include "../../unegg-common/MultipleStream.h"
+#include "../../unegg-common/AZFileStreams.h"
 
 #include "PropService.h"
 

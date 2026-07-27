@@ -1,0 +1,9 @@
+﻿#define INITGUID
+#include "StdAfx.h"
+#include "../unegg-lib/MyGuidDef.h"
+#include "../unegg-lib/MyWindows.h"
+#include "../unegg-common/IStream.h"
+#include "../unegg-common/IArchive.h"
+#include "../unegg-common/IPassword.h"
+#include "../unegg-common/ICoder.h"
+#include "../unegg-common/ICrypto.h"

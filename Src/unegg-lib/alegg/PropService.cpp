@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "PropService.h"
 
-#include "../../common/PropID.h"
+#include "../../unegg-common/PropID.h"
 
 namespace PropService
 {

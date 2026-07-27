@@ -1,7 +1,7 @@
-#ifndef __ALZ_OPERATOR_H__
+﻿#ifndef __ALZ_OPERATOR_H__
 #define __ALZ_OPERATOR_H__
 
-#include "../../common/seven_stream.h"
+#include "../../unegg-common/seven_stream.h"
 #include "alzstruct.h"
 
 namespace NArchive
