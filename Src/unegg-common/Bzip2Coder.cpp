@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "Bzip2Coder.h"
 
-#include "../lib/bzip2/bzlib.h"
+#include "../unegg-lib/bzip2/bzlib.h"
 
 #include "crc32.h"
 

@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+ï»¿#include "StdAfx.h"
 #include "DeflateCoder.h"
 
-#include "../lib/zlib/zlib.h"
+#include "../unegg-lib/zlib/zlib.h"
 
 #include "crc32.h"
 
@@ -22,8 +22,8 @@ HRESULT CDeflateCoder::Decode(ISequentialInStream* inStream, ISequentialOutStrea
     z_stream zStream;
     memset(&zStream, 0, sizeof(z_stream));
     /*
-        ÀÌ ½ºÆ®¸²ÀÌ zlib Çì´õ¸¦ Æ÷ÇÔÇÏ´Â°ÍÀÌ ¾Æ´Ï¶ó¸é
-        windowsBits¿¡ -MAX_WBITS¸¦ Àü´ŞÇØ¾ß ÇÕ´Ï´Ù.
+        ì´ ìŠ¤íŠ¸ë¦¼ì´ zlib í—¤ë”ë¥¼ í¬í•¨í•˜ëŠ”ê²ƒì´ ì•„ë‹ˆë¼ë©´
+        windowsBitsì— -MAX_WBITSë¥¼ ì „ë‹¬í•´ì•¼ í•©ë‹ˆë‹¤.
     */
     inflateInit2(&zStream, -MAX_WBITS);
 

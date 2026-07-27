@@ -1,7 +1,7 @@
-#ifndef __EGG_IARCHIVE_H__
+﻿#ifndef __EGG_IARCHIVE_H__
 #define __EGG_IARCHIVE_H__
 
-#include "../lib/MyGuidDef.h"
+#include "../unegg-lib/MyGuidDef.h"
 #include "IStream.h"
 
 namespace NFileTimeType

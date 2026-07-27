@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "LZMACoder.h"
 
-#include "../lib/lzma/LzmaDec.h"
+#include "../unegg-lib/lzma/LzmaDec.h"
 
 #include "crc32.h"
 

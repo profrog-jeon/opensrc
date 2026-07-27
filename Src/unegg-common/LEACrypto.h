@@ -1,4 +1,4 @@
-#ifndef __ALEGG_LEA_CRYPTO_H__
+﻿#ifndef __ALEGG_LEA_CRYPTO_H__
 #define __ALEGG_LEA_CRYPTO_H__
 
 #include "ICrypto.h"
@@ -6,7 +6,7 @@
 
 #pragma warning(push)
 #pragma warning(disable:4819)
-#include "../lib/lea/lea.h"
+#include "../unegg-lib/lea/lea.h"
 #pragma warning(pop)
 
 class CLEADecryptor : public TUnknown<IDecryptor>

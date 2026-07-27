@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "AZOCoder.h"
 
-#include "../lib/azo/AZO.h"
+#include "../unegg-lib/azo/AZO.h"
 
 #include "crc32.h"
 

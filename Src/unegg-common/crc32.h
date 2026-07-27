@@ -1,7 +1,7 @@
-#ifndef __CRC32_H__
+﻿#ifndef __CRC32_H__
 #define __CRC32_H__
 
-#include "../lib/MyType.h"
+#include "../unegg-lib/MyType.h"
 
 #if __cplusplus
 extern "C" {

@@ -1,4 +1,4 @@
-#ifndef __UNEGG_STDAFX_H__
+﻿#ifndef __UNEGG_STDAFX_H__
 #define __UNEGG_STDAFX_H__
 
 #include <iostream>
@@ -8,7 +8,7 @@
 #include <memory>
 #include <map>
 
-#include "lib/col/src/stringt/stringt.h"
+#include "../unegg-lib/col/src/stringt/stringt.h"
 #if UNICODE
 typedef wstring tstring;
 #define _tprintf wprintf
@@ -22,18 +22,18 @@ typedef string tstring;
 #include <cguid.h>
 #include <atlbase.h>
 
-#include "lib/MyType.h"
+#include "../unegg-lib/MyType.h"
 
 #ifndef RINOK
 #define RINOK(x) { HRESULT __result_ = (x); if (__result_ != S_OK) return __result_; }
 #endif
 #else
-#include "lib/MyType.h"
+#include "../unegg-lib/MyType.h"
 
-#include "lib/MyCom.h"
+#include "../unegg-lib/MyCom.h"
 #define CComPtr CMyComPtr
 
-#include "lib/MyWindows.h"
+#include "../unegg-lib/MyWindows.h"
 
 #define HRESULT LONG
 

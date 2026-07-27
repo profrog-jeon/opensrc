@@ -1,10 +1,10 @@
-#ifndef __CALLBACKS_H__
+﻿#ifndef __CALLBACKS_H__
 #define __CALLBACKS_H__
 
-#include "common/UnknownImpl.h"
+#include "UnknownImpl.h"
 
-#include "common/IArchive.h"
-#include "common/IPassword.h"
+#include "IArchive.h"
+#include "IPassword.h"
 
 class CArchiveOpenCallback: public IAddRefReleaseImpl<
     IArchiveOpenCallback, ICryptoGetTextPassword, IArchiveOpenVolumeCallback

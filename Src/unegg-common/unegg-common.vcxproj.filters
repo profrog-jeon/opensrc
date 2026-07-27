@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AESCrypto.cpp" />
+    <ClCompile Include="AZFileStreams.cpp" />
+    <ClCompile Include="AZOCoder.cpp" />
+    <ClCompile Include="Bzip2Coder.cpp" />
+    <ClCompile Include="Callbacks.cpp" />
+    <ClCompile Include="CoderImpl.cpp" />
+    <ClCompile Include="crc32.c" />
+    <ClCompile Include="DeflateCoder.cpp" />
+    <ClCompile Include="GeneralFileStream.cpp" />
+    <ClCompile Include="Interfaces.cpp" />
+    <ClCompile Include="LEACrypto.cpp" />
+    <ClCompile Include="LZMACoder.cpp" />
+    <ClCompile Include="MultipleStream.cpp" />
+    <ClCompile Include="PropId.cpp" />
+    <ClCompile Include="seven_stream.cpp" />
+    <ClCompile Include="StoreCoder.cpp" />
+    <ClCompile Include="TimeService.cpp" />
+    <ClCompile Include="ZipCrypto.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AESCrypto.h" />
+    <ClInclude Include="AZFileStreams.h" />
+    <ClInclude Include="AZOCoder.h" />
+    <ClInclude Include="Bzip2Coder.h" />
+    <ClInclude Include="Callbacks.h" />
+    <ClInclude Include="CoderImpl.h" />
+    <ClInclude Include="crc32.h" />
+    <ClInclude Include="DeflateCoder.h" />
+    <ClInclude Include="ErrorCodes.h" />
+    <ClInclude Include="GeneralFileStream.h" />
+    <ClInclude Include="IArchive.h" />
+    <ClInclude Include="ICoder.h" />
+    <ClInclude Include="ICrypto.h" />
+    <ClInclude Include="Interfaces.h" />
+    <ClInclude Include="IPassword.h" />
+    <ClInclude Include="IStream.h" />
+    <ClInclude Include="LEACrypto.h" />
+    <ClInclude Include="LZMACoder.h" />
+    <ClInclude Include="MultipleStream.h" />
+    <ClInclude Include="PropID.h" />
+    <ClInclude Include="seven_stream.h" />
+    <ClInclude Include="StoreCoder.h" />
+    <ClInclude Include="TimeService.h" />
+    <ClInclude Include="UnknownImpl.h" />
+    <ClInclude Include="ZipCrypto.h" />
+    <ClInclude Include="StdAfx.h" />
+  </ItemGroup>
+</Project>

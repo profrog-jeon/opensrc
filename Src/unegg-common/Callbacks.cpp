@@ -1,16 +1,16 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "Callbacks.h"
-#include "common/ErrorCodes.h"
+#include "ErrorCodes.h"
 
 #ifndef _WIN32
 #include <unistd.h>
 #include <sys/stat.h>
 #endif
 
-#include "common/PropID.h"
-#include "common/GeneralFileStream.h"
+#include "PropID.h"
+#include "GeneralFileStream.h"
 
-#include "lib/PropVariant.h"
+#include "../unegg-lib/PropVariant.h"
 
 #ifdef _WIN32
 #define FOLDER_SEPARATOR '\\'

@@ -1,7 +1,7 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "LEACrypto.h"
 
-#include "../lib/aes/fileenc.h"
+#include "../unegg-lib/aes/fileenc.h"
 
 CLEADecryptor::CLEADecryptor(int mode, const char* password, const unsigned char* salt)
 {

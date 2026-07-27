@@ -1,10 +1,10 @@
-#ifndef __ALEGG_AES_CRYPTO_H__
+﻿#ifndef __ALEGG_AES_CRYPTO_H__
 #define __ALEGG_AES_CRYPTO_H__
 
 #include "ICrypto.h"
 #include "UnknownImpl.h"
 
-#include "../lib/aes/fileenc.h"
+#include "../unegg-lib/aes/fileenc.h"
 
 class CAESDecryptor : public TUnknown<IDecryptor>
 {
