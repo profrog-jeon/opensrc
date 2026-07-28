@@ -1,0 +1,8 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../unegg/unegg.vcxproj" Id="312f1377-40bd-4376-bc4d-f09fc40654b4" />
+  <Project Path="unegg-main.vcxproj" Id="311b62bf-65ff-4490-9454-6d7561ef6a7d" />
+</Solution>
