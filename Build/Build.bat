@@ -18,11 +18,19 @@ RD /S /Q ..\Output\LinuxRelease
 mkdir ..\Output\LinuxRelease
 
 cd ..\Output\LinuxRelease
-wsl cmake -DCMAKE_BUILD_TYPE=Debug ../../Src
+wsl cmake ../../Src
 IF %ERRORLEVEL% NEQ 0 GOTO Error
 wsl cmake --build . --parallel 16
 IF %ERRORLEVEL% NEQ 0 GOTO Error
 
+RD /S /Q ..\Output\libarchive
+mkdir ..\Output\libarchive
+
+cd ..\Output\libarchive
+wsl cmake ../../Src/libarchive
+IF %ERRORLEVEL% NEQ 0 GOTO Error
+wsl cmake --build . --parallel 16
+IF %ERRORLEVEL% NEQ 0 GOTO Error
 
 REM ===============================
 REM ===========  Final  ===========

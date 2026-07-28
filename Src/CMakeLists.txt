@@ -45,31 +45,27 @@ endfunction()
 
 add_subdirectory(sqlite3Lib)
 add_subdirectory(pcre2)
-add_subdirectory(bzip2)
+add_subdirectory(unegg)
+
+extract_zip(bzip2-bzip2-1.0.8.zip bzip2)
 copy_headers2(${CMAKE_SOURCE_DIR}/bzip2 ${CMAKE_SOURCE_DIR}/../Inc copy_bzip2_headers)
 
-add_subdirectory(unegg)
 
 extract_zip(liblzma-master.zip liblzma-master)
 set(LZMA_DIR "${CMAKE_SOURCE_DIR}/liblzma-master")
-execute_process(
+add_custom_target(liblzma ALL
     COMMAND ./configure
         --disable-shared
         --enable-static
+        --disable-xz
+        --disable-xzdec
         --disable-lzmadec
         --disable-lzmainfo
-    WORKING_DIRECTORY ${LZMA_DIR}
-)
-
-execute_process(
     COMMAND make -j8
-    WORKING_DIRECTORY ${LZMA_DIR}
-)
-
-execute_process(
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${LZMA_DIR}/src/liblzma/.libs/liblzma.a
         ${OUTPUT_DIR}/liblzma.a
+    WORKING_DIRECTORY ${LZMA_DIR}
 )
 copy_headers(
     ${LZMA_DIR}/src/liblzma/api
@@ -99,54 +95,4 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/lz4-1.10.0/lib
     ${CMAKE_SOURCE_DIR}/../Inc
     copy_lz4_headers
-)
-
-extract_zip(libarchive-3.8.8.zip libarchive-3.8.8)
-
-set(ENABLE_WERROR OFF CACHE BOOL "" FORCE)
-set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
-set(ENABLE_TAR OFF CACHE BOOL "" FORCE)
-set(ENABLE_CPIO OFF CACHE BOOL "" FORCE)
-set(ENABLE_CAT OFF CACHE BOOL "" FORCE)
-set(ENABLE_UNZIP OFF CACHE BOOL "" FORCE)
-set(ENABLE_TEST OFF CACHE BOOL "" FORCE)
-set(ENABLE_ZLIB   ON CACHE BOOL "" FORCE)
-set(ENABLE_BZip2  ON CACHE BOOL "" FORCE)
-set(ENABLE_LIBXML2 OFF CACHE BOOL "" FORCE)
-set(ENABLE_EXPAT OFF CACHE BOOL "" FORCE)
-set(ENABLE_LZMA ON CACHE BOOL "" FORCE)
-set(ENABLE_LZ4 ON CACHE BOOL "" FORCE)
-set(ENABLE_ZSTD ON CACHE BOOL "" FORCE)
-set(ENABLE_OPENSSL ON CACHE BOOL "" FORCE)
-
-set(ZLIB_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-set(BZIP2_INCLUDE_DIR    "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-set(LIBLZMA_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc/lzma" CACHE PATH "" FORCE)
-set(LZ4_INCLUDE_DIR      "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-set(ZSTD_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc/zstd" CACHE PATH "" FORCE)
-set(OPENSSL_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-
-set(ZLIB_LIBRARY         "${OUTPUT_DIR}/libz.a" CACHE FILEPATH "" FORCE)
-set(BZIP2_LIBRARIES      "${OUTPUT_DIR}/libbz2.a" CACHE FILEPATH "" FORCE)
-set(LIBLZMA_LIBRARY      "${OUTPUT_DIR}/liblzma.a" CACHE FILEPATH "" FORCE)
-set(LZ4_LIBRARY          "${OUTPUT_DIR}/liblz4.a" CACHE FILEPATH "" FORCE)
-set(ZSTD_LIBRARY         "${OUTPUT_DIR}/libzstd.a" CACHE FILEPATH "" FORCE)
-set(OPENSSL_SSL_LIBRARY     "${OUTPUT_DIR}/libssl.a" CACHE FILEPATH "" FORCE)
-set(OPENSSL_CRYPTO_LIBRARY  "${OUTPUT_DIR}/libcrypto.a" CACHE FILEPATH "" FORCE)
-set(OPENSSL_LIBRARIES       "${OUTPUT_DIR}/libssl.a;${OUTPUT_DIR}/libcrypto.a" CACHE STRING "" FORCE)
-
-include_directories(${CMAKE_SOURCE_DIR}/../Inc)
-include_directories(${CMAKE_SOURCE_DIR}/../Inc/zstd)
-include_directories(${CMAKE_SOURCE_DIR}/../Inc/lzma)
-link_directories(${CMAKE_SOURCE_DIR}/../Build/LinuxRelease)
-
-set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE)
-
-add_subdirectory(libarchive-3.8.8)
-
-copy_headers2(    
-    ${CMAKE_SOURCE_DIR}/libarchive-3.8.8/libarchive
-    ${CMAKE_SOURCE_DIR}/../Inc/archive
-	copy_libarchive_headers
 )
