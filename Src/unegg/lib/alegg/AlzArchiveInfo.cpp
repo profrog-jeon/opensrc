@@ -388,7 +388,7 @@ namespace NArchive
                 NWindows::NCOM::CPropVariant prop;
                 switch (propID)
                 {
-                case kpidPath:          prop = info.GetPath();                              break;
+                case kpidPath:          prop = (LPCOLESTR)info.GetPath();                   break;
                 case kpidSize:          prop = info.GetSize();                              break;
                 case kpidPackSize:      prop = info.GetPackedSize();                        break;
 #if 0

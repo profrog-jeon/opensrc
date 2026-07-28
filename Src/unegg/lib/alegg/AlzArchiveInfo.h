@@ -32,7 +32,7 @@ namespace NArchive
 
             UInt64 GetSize() const { return blockInfo.unpackSize; }
             UInt64 GetPackedSize() const { return blockInfo.packSize; }
-            LPCWSTR GetPath() const { return filename.c_str(); }
+            LPCTSTR GetPath() const { return filename.c_str(); }
             UInt32 GetAttributes() const { return attributes; }
 
             // return is NArchive::NExtract::NOperationResult or HRESULT

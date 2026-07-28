@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "GeneralFileStream.h"
 
 COutGeneralFileStream::COutGeneralFileStream()
@@ -184,7 +184,7 @@ bool COutGeneralFileStream::Create(LPCTSTR path)
     file_ = CreateFile(path, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, CREATE_NEW, FILE_ATTRIBUTE_NORMAL, NULL);
     return (file_ != INVALID_HANDLE_VALUE);
 #else
-    file_ = fopen(tstring(path).toutf8().c_str(), "wb");
+    file_ = fopen(path, "wb");
     return (file_ != NULL);
 #endif
 }
@@ -342,7 +342,7 @@ bool CInGeneralFileStream::Open(LPCTSTR path)
     file_ = CreateFile(path, GENERIC_READ, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
     return (file_ != INVALID_HANDLE_VALUE);
 #else
-    file_ = fopen(tstring(path).toutf8().c_str(), "rb");
+    file_ = fopen(path, "rb");
     return (file_ != NULL);
 #endif
 }

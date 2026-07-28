@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+﻿#include "StdAfx.h"
 #include "alzoper.h"
 
 #ifndef _WIN32
@@ -119,7 +119,7 @@ namespace NArchive
                         char* outbuffer = filename_utf8;
                         iconv(cd, &inbuffer, &inbytes, &outbuffer, &outbytes);
 
-                        p.filename = wstring().fromutf8(filename_utf8);
+                        p.filename = filename_utf8;
                         free(filename_utf8);
                         iconv_close(cd);
 #endif

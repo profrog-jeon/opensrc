@@ -9,7 +9,7 @@
 #include <map>
 
 #include "lib/col/src/stringt/stringt.h"
-#if UNICODE
+#ifdef UNICODE
 typedef wstring tstring;
 #define _tprintf wprintf
 #else
@@ -75,7 +75,7 @@ constexpr inline HRESULT HRESULT_FROM_WIN32(unsigned int x)
 #define FILE_ATTRIBUTE_ENCRYPTED        0x4000
 #define FILE_ATTRIBUTE_UNIX_EXTENSION   0x8000   /* trick for Unix */
 
-#if UNICODE
+#ifdef UNICODE
 typedef wchar_t TCHAR;
 #define TEXT(s) L##s
 #else
@@ -92,7 +92,7 @@ typedef const wchar_t* LPCWSTR;
 typedef TCHAR* LPTSTR;
 typedef const TCHAR* LPCTSTR;
 
-#if UNICODE
+#ifdef UNICODE
 #define _tcsrchr        wcsrchr
 #else
 #define _tcsrchr        strrchr

@@ -98,19 +98,19 @@ STDMETHODIMP CArchiveOpenCallback::GetProperty(PROPID propID, PROPVARIANT *value
     return ret;
 }
 
-STDMETHODIMP CArchiveOpenCallback::GetStream(const wchar_t *name, IInStream **inStream)
+STDMETHODIMP CArchiveOpenCallback::GetStream(const TCHAR* name, IInStream **inStream)
 {
     HRESULT ret = S_OK;
     if (name)
     {
-        if (wcsrchr(name, separator_w))
+        if (_tcsrchr(name, separator_w))
         {
-            LPWSTR path = new wchar_t[wcslen(name) + 1];
-            wcscpy(path, name);
+            LPTSTR path = new TCHAR[_tcslen(name) + 1];
+            _tcscpy(path, name);
 
-            LPCWSTR folderPath = path;
-            LPWSTR fileName = wcsrchr(path, separator_w);
-            (*fileName) = (WCHAR)NULL;
+            LPCTSTR folderPath = path;
+            LPTSTR fileName = _tcsrchr(path, separator_w);
+            (*fileName) = 0;
             fileName++;
 
             folderPath_ = tstring(folderPath);
@@ -261,7 +261,7 @@ STDMETHODIMP CArchiveExtractCallback::CryptoGetTextPassword(BSTR *aPassword)
 {
     if (password_.size() != 0)
     {
-        *aPassword = SysAllocString(wstring(password_).c_str());
+        *aPassword = SysAllocString(password_);
         return S_OK;
     }
     return ercInvalidPassword;

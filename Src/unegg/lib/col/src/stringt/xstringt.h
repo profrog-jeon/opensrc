@@ -1,4 +1,4 @@
-#ifndef __XSTRINGT_H__
+﻿#ifndef __XSTRINGT_H__
 #define __XSTRINGT_H__
 
 #include "inclusion_stringt.h"

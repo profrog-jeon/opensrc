@@ -1,4 +1,4 @@
-// Windows/PropVariant.cpp
+﻿// Windows/PropVariant.cpp
 
 #include "StdAfx.h"
 
@@ -98,21 +98,6 @@ CPropVariant& CPropVariant::operator=(LPCOLESTR lpszSrc)
   wReserved1 = 0;
   bstrVal = ::SysAllocString(lpszSrc);
   if (!bstrVal && lpszSrc)
-  {
-    throw kMemException;
-    // vt = VT_ERROR;
-    // scode = E_OUTOFMEMORY;
-  }
-  return *this;
-}
-
-CPropVariant& CPropVariant::operator=(const char *s)
-{
-  InternalClear();
-  vt = VT_BSTR;
-  wReserved1 = 0;
-  bstrVal = AllocBstrFromAscii(s);
-  if (!bstrVal)
   {
     throw kMemException;
     // vt = VT_ERROR;

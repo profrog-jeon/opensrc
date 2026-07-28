@@ -22,7 +22,7 @@ public:
     STDMETHOD(SetCompleted)(const UInt64 *files, const UInt64 *bytes);
     STDMETHOD(CryptoGetTextPassword)(BSTR *password);
     STDMETHOD(GetProperty)(PROPID propID, PROPVARIANT *value);
-    STDMETHOD(GetStream)(const wchar_t *name, IInStream **inStream);
+    STDMETHOD(GetStream)(const TCHAR *name, IInStream **inStream);
 
     CArchiveOpenCallback() {}
 

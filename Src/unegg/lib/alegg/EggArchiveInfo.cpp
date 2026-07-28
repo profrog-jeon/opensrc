@@ -30,7 +30,7 @@
 
 #include <dirent.h>
 
-#if UNICODE
+#ifdef UNICODE
 #define _tcsrchr        wcsrchr
 #else
 #define _tcsrchr        strrchr

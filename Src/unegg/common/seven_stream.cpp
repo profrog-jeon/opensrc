@@ -3,7 +3,7 @@
 
 #ifndef _WIN32
 
-#if UNICODE
+#ifdef UNICODE
 #define _tcsrchr        wcsrchr
 #else
 #define _tcsrchr        strrchr
