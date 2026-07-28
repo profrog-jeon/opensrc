@@ -145,5 +145,3 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/../Inc/archive
 	copy_libarchive_headers
 )
-
-add_subdirectory(unegg)
