@@ -43,6 +43,8 @@ function(copy_headers2 SOURCE_DIR DEST_DIR TARGET_NAME)
     endforeach()
 endfunction()
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON CACHE BOOL "" FORCE)
+
 add_subdirectory(sqlite3Lib)
 add_subdirectory(pcre2)
 add_subdirectory(unegg)
