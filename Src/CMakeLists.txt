@@ -52,17 +52,24 @@ add_subdirectory(unegg)
 
 extract_zip(liblzma-master.zip liblzma-master)
 set(LZMA_DIR "${CMAKE_SOURCE_DIR}/liblzma-master")
-add_custom_target(liblzma ALL
+execute_process(
     COMMAND ./configure
         --disable-shared
         --enable-static
         --disable-lzmadec
         --disable-lzmainfo
+    WORKING_DIRECTORY ${LZMA_DIR}
+)
+
+execute_process(
     COMMAND make -j8
+    WORKING_DIRECTORY ${LZMA_DIR}
+)
+
+execute_process(
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         ${LZMA_DIR}/src/liblzma/.libs/liblzma.a
         ${OUTPUT_DIR}/liblzma.a
-    WORKING_DIRECTORY ${LZMA_DIR}
 )
 copy_headers(
     ${LZMA_DIR}/src/liblzma/api
