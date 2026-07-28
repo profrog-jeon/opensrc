@@ -11,6 +11,7 @@ wsl cmake -DCMAKE_BUILD_TYPE=Debug ../../Src
 IF %ERRORLEVEL% NEQ 0 GOTO Error
 wsl cmake --build . --parallel 16
 IF %ERRORLEVEL% NEQ 0 GOTO Error
+cd ..\..\Build
 
 RD /S /Q ..\Output\libarchive
 mkdir ..\Output\libarchive
