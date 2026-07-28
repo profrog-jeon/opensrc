@@ -1,5 +1,6 @@
 ﻿#pragma once
 
+#include "Type.h"
 #include "StdAfx.h"
 #include "lib/PropVariant.h"
 #include "lib/alegg/EggArchiveInfo.h"

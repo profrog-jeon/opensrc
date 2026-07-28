@@ -8,6 +8,7 @@
 #include <memory>
 #include <map>
 
+#include "Type.h"
 #include "lib/col/src/stringt/stringt.h"
 #ifdef UNICODE
 typedef wstring tstring;
@@ -75,22 +76,14 @@ constexpr inline HRESULT HRESULT_FROM_WIN32(unsigned int x)
 #define FILE_ATTRIBUTE_ENCRYPTED        0x4000
 #define FILE_ATTRIBUTE_UNIX_EXTENSION   0x8000   /* trick for Unix */
 
-#ifdef UNICODE
-typedef wchar_t TCHAR;
-#define TEXT(s) L##s
-#else
-typedef char TCHAR;
-#define TEXT(s) s
-#endif
-
 typedef char* LPSTR;
 typedef const char* LPCSTR;
 
 typedef wchar_t* LPWSTR;
 typedef const wchar_t* LPCWSTR;
 
-typedef TCHAR* LPTSTR;
-typedef const TCHAR* LPCTSTR;
+typedef EGG_TCHAR* LPEGGTSTR;
+typedef const EGG_TCHAR* LPCEGGTSTR;
 
 #ifdef UNICODE
 #define _tcsrchr        wcsrchr

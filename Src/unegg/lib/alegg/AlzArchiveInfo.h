@@ -32,7 +32,7 @@ namespace NArchive
 
             UInt64 GetSize() const { return blockInfo.unpackSize; }
             UInt64 GetPackedSize() const { return blockInfo.packSize; }
-            LPCTSTR GetPath() const { return filename.c_str(); }
+            LPCEGGTSTR GetPath() const { return filename.c_str(); }
             UInt32 GetAttributes() const { return attributes; }
 
             // return is NArchive::NExtract::NOperationResult or HRESULT
@@ -42,7 +42,7 @@ namespace NArchive
             HRESULT LoadPackedFileInfo(seven_istream& sis);
 
             UInt64 offset_;
-            std::basic_string<TCHAR> password_;
+            std::basic_string<EGG_TCHAR> password_;
         };
 
         class CInArchive : public IAddRefReleaseImpl<IInArchive>

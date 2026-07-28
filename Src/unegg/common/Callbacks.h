@@ -22,7 +22,7 @@ public:
     STDMETHOD(SetCompleted)(const UInt64 *files, const UInt64 *bytes);
     STDMETHOD(CryptoGetTextPassword)(BSTR *password);
     STDMETHOD(GetProperty)(PROPID propID, PROPVARIANT *value);
-    STDMETHOD(GetStream)(const TCHAR *name, IInStream **inStream);
+    STDMETHOD(GetStream)(const EGG_TCHAR *name, IInStream **inStream);
 
     CArchiveOpenCallback() {}
 
@@ -55,7 +55,7 @@ public:
     // ICryptoGetTextPassword
     STDMETHOD(CryptoGetTextPassword)(BSTR *aPassword);
 
-    CArchiveExtractCallback(IInArchive* archive, LPCTSTR s, LPCTSTR p)
+    CArchiveExtractCallback(IInArchive* archive, LPCEGGTSTR s, LPCEGGTSTR p)
         : archive_(archive), destPath_(s), password_(p)
     {}
 

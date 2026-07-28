@@ -305,6 +305,7 @@
     <ClInclude Include="lib\zlib\zlib.h" />
     <ClInclude Include="lib\zlib\zutil.h" />
     <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="Type.h" />
     <ClInclude Include="unegg.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

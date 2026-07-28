@@ -1,6 +1,8 @@
 ﻿#ifndef __ALZ_STRUCTURE_H__
 #define __ALZ_STRUCTURE_H__
 
+#include "../../Type.h"
+
 namespace NArchive
 {
     namespace NAlz
@@ -25,7 +27,7 @@ namespace NArchive
 
         struct FILE_INFO
         {
-            std::basic_string<TCHAR> filename;
+            std::basic_string<EGG_TCHAR> filename;
             DWORD attributes;
 #if 0
             UInt64 lastModified;

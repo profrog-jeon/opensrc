@@ -81,7 +81,7 @@ void SetLargePageSize()
 #ifdef _7ZIP_LARGE_PAGES
     SIZE_T size = 0;
     GetLargePageMinimumP largePageMinimum = (GetLargePageMinimumP)
-    GetProcAddress(GetModuleHandle(TEXT("kernel32.dll")), "GetLargePageMinimum");
+    GetProcAddress(GetModuleHandle(EGGTEXT("kernel32.dll")), "GetLargePageMinimum");
     if (largePageMinimum == 0)
     return;
     size = largePageMinimum();

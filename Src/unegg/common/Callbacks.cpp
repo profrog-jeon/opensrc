@@ -27,7 +27,7 @@ constexpr wchar_t separator_w = COL_GLUE(L, FOLDER_SEPARATOR);
 #define separator separator_a
 #endif
 
-void CreateDirectories(LPCTSTR path)
+void CreateDirectories(LPCEGGTSTR path)
 {
 #ifdef _WIN32
     if (!CreateDirectory(path, NULL) && (GetLastError() == ERROR_PATH_NOT_FOUND))
@@ -35,13 +35,13 @@ void CreateDirectories(LPCTSTR path)
     if ((mkdir(tstring(path).toutf8().c_str(), 0700) == -1) && (errno == ENOENT))
 #endif
     {
-        LPTSTR _path = new TCHAR[_tcslen(path) + 1];
+        LPEGGTSTR _path = new EGG_TCHAR[_tcslen(path) + 1];
         _tcscpy(_path, path);
 
-        LPTSTR p = _tcsrchr(_path, separator);
+        LPEGGTSTR p = _tcsrchr(_path, separator);
         if (p)
         {
-            *p = (TCHAR)NULL;
+            *p = (EGG_TCHAR)NULL;
             CreateDirectories(_path);
             *p = separator;
 
@@ -82,7 +82,7 @@ STDMETHODIMP CArchiveOpenCallback::GetProperty(PROPID propID, PROPVARIANT *value
         tstring path;
         if (folderPath_.size())
         {
-            path.format(TEXT("%s%c%s"), folderPath_.c_str(), separator, fileName_.c_str());
+            path.format(EGGTEXT("%s%c%s"), folderPath_.c_str(), separator, fileName_.c_str());
         }
         else
         {
@@ -98,18 +98,18 @@ STDMETHODIMP CArchiveOpenCallback::GetProperty(PROPID propID, PROPVARIANT *value
     return ret;
 }
 
-STDMETHODIMP CArchiveOpenCallback::GetStream(const TCHAR* name, IInStream **inStream)
+STDMETHODIMP CArchiveOpenCallback::GetStream(const EGG_TCHAR* name, IInStream **inStream)
 {
     HRESULT ret = S_OK;
     if (name)
     {
         if (_tcsrchr(name, separator_w))
         {
-            LPTSTR path = new TCHAR[_tcslen(name) + 1];
+            LPEGGTSTR path = new EGG_TCHAR[_tcslen(name) + 1];
             _tcscpy(path, name);
 
-            LPCTSTR folderPath = path;
-            LPTSTR fileName = _tcsrchr(path, separator_w);
+            LPCEGGTSTR folderPath = path;
+            LPEGGTSTR fileName = _tcsrchr(path, separator_w);
             (*fileName) = 0;
             fileName++;
 
@@ -125,7 +125,7 @@ STDMETHODIMP CArchiveOpenCallback::GetStream(const TCHAR* name, IInStream **inSt
         tstring path;
         if (folderPath_.size())
         {
-            path.format(TEXT("%s%c%s"), folderPath_.c_str(), separator, fileName_.c_str());
+            path.format(EGGTEXT("%s%c%s"), folderPath_.c_str(), separator, fileName_.c_str());
         }
         else
         {
@@ -191,7 +191,7 @@ STDMETHODIMP CArchiveExtractCallback::GetStream(UInt32 index,
         {
             return E_FAIL;
         }
-        fullPath = std::basic_string<TCHAR>(prop.bstrVal, SysStringLen(prop.bstrVal));
+        fullPath = std::basic_string<EGG_TCHAR>(prop.bstrVal, SysStringLen(prop.bstrVal));
 
         // Zip Slip Vulnerability
 #ifdef _WIN32

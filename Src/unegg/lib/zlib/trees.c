@@ -1109,8 +1109,8 @@ local void compress_block(s, ltree, dtree)
 }
 
 /* ===========================================================================
- * Check if the data type is TEXT or BINARY, using the following algorithm:
- * - TEXT if the two conditions below are satisfied:
+ * Check if the data type is EGGTEXT or BINARY, using the following algorithm:
+ * - EGGTEXT if the two conditions below are satisfied:
  *    a) There are no non-portable control characters belonging to the
  *       "black list" (0..6, 14..25, 28..31).
  *    b) There is at least one printable character belonging to the

@@ -149,6 +149,7 @@
     <ClInclude Include="lib\zlib\zutil.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="unegg.h" />
+    <ClInclude Include="Type.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="guiddef.cpp" />

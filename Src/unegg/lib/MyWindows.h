@@ -101,7 +101,7 @@ typedef ULARGE_INTEGER *PULARGE_INTEGER;
 typedef wchar_t WCHAR;
 
 #ifdef UNICODE
-typedef WCHAR TCHAR;
+typedef WCHAR EGG_TCHAR;
 typedef WCHAR OLECHAR;
 #define lstrcpy wcscpy
 #define lstrcat wcscat
@@ -110,7 +110,7 @@ typedef WCHAR OLECHAR;
 #define _tcscat wcscat
 #define _tcslen wcslen
 #else
-typedef CHAR TCHAR;
+typedef CHAR EGG_TCHAR;
 typedef CHAR OLECHAR;
 #define lstrcpy strcpy
 #define lstrcat strcat

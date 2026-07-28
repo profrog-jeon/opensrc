@@ -396,7 +396,7 @@ namespace NArchive
             return S_OK;
         }
 
-        int CPackedFileInfo::BuildZipCrypto(LPCTSTR password, EXTRACT_CALLBACK& callback)
+        int CPackedFileInfo::BuildZipCrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback)
         {
             int ret = NArchive::NExtract::NOperationResult::kOK;
             if (callback.decryptor)
@@ -428,7 +428,7 @@ namespace NArchive
             return ret;
         }
 
-        int CPackedFileInfo::BuildAESCrypto(LPCTSTR password, EXTRACT_CALLBACK& callback)
+        int CPackedFileInfo::BuildAESCrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback)
         {
             int ret = NArchive::NExtract::NOperationResult::kOK;
             try
@@ -450,7 +450,7 @@ namespace NArchive
             return ret;
         }
 
-        int CPackedFileInfo::BuildLEACrypto(LPCTSTR password, EXTRACT_CALLBACK& callback)
+        int CPackedFileInfo::BuildLEACrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback)
         {
             int ret = NArchive::NExtract::NOperationResult::kOK;
             try
@@ -941,15 +941,15 @@ namespace NArchive
                     if ((ret == S_OK) && (prop.vt == VT_BSTR))
                     {
                         UINT length = SysStringByteLen(prop.bstrVal);
-                        TCHAR* path = (TCHAR*)malloc(length + sizeof(TCHAR));
+                        EGG_TCHAR* path = (EGG_TCHAR*)malloc(length + sizeof(EGG_TCHAR));
                         memcpy(path, prop.bstrVal, length);
                         path[length / 2] = 0;
 
-                        LPTSTR psz = NULL;
+                        LPEGGTSTR psz = NULL;
 #ifdef _WIN32
-                        psz = _tcsrchr(path, TEXT('\\'));
+                        psz = _tcsrchr(path, EGGTEXT('\\'));
 #else
-                        psz = _tcsrchr(path, TEXT('/'));
+                        psz = _tcsrchr(path, EGGTEXT('/'));
 #endif
                         if (psz)
                         {
@@ -980,12 +980,12 @@ namespace NArchive
             return ret;
         }
 
-        HRESULT CInArchive::FindArchiveName(unsigned long id, std::basic_string<TCHAR>& fileName, LPCTSTR folderPath)
+        HRESULT CInArchive::FindArchiveName(unsigned long id, std::basic_string<EGG_TCHAR>& fileName, LPCEGGTSTR folderPath)
         {
             HRESULT ret = S_OK;
 #if _WIN32
             tstring strFind;
-            strFind.format(TEXT("%s\\*.*"), folderPath);
+            strFind.format(EGGTEXT("%s\\*.*"), folderPath);
             WIN32_FIND_DATA wfd;
             HANDLE hFileFind = FindFirstFile(strFind, &wfd);
             if (hFileFind != INVALID_HANDLE_VALUE)
@@ -996,7 +996,7 @@ namespace NArchive
                     if ((wfd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) == 0)
                     {
                         tstring filePath;
-                        filePath.format(TEXT("%s\\%s"), folderPath, wfd.cFileName);
+                        filePath.format(EGGTEXT("%s\\%s"), folderPath, wfd.cFileName);
 
                         bool isMatched = false;
                         if ((IsArchiveForId(filePath, id, &isMatched) == S_OK) && isMatched)
@@ -1029,7 +1029,7 @@ namespace NArchive
                         tstring filePath(entry->d_name);
                         if (_folderPath.size())
                         {
-                            filePath.format(TEXT("%s/%s"), _folderPath.c_str(), tstring(entry->d_name).c_str());
+                            filePath.format(EGGTEXT("%s/%s"), _folderPath.c_str(), tstring(entry->d_name).c_str());
                         }
 
                         bool isMatched = false;
@@ -1054,7 +1054,7 @@ namespace NArchive
             return ret;
         }
 
-        HRESULT CInArchive::IsArchiveForId(LPCTSTR filePath, unsigned long id, bool* isMatched)
+        HRESULT CInArchive::IsArchiveForId(LPCEGGTSTR filePath, unsigned long id, bool* isMatched)
         {
             *isMatched = false;
             CInGeneralFileStream* fileStream = new CInGeneralFileStream();

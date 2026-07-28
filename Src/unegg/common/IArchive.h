@@ -2,6 +2,7 @@
 #define __EGG_IARCHIVE_H__
 
 #include "../lib/MyGuidDef.h"
+#include "../Type.h"
 #include "IStream.h"
 
 namespace NFileTimeType
@@ -140,7 +141,7 @@ class IArchiveOpenVolumeCallback : public IUnknown
 {
 public:
     virtual HRESULT STDMETHODCALLTYPE GetProperty(PROPID propID, PROPVARIANT *value) = 0;
-    virtual HRESULT STDMETHODCALLTYPE GetStream(const TCHAR *name, IInStream **inStream) = 0;
+    virtual HRESULT STDMETHODCALLTYPE GetStream(const EGG_TCHAR *name, IInStream **inStream) = 0;
 };
 
 // {FE200983-6260-4E44-95C8-7BBB2FF545E8}

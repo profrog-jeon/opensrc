@@ -1,4 +1,4 @@
-#ifndef __ALEGG_INTERFACES_H__
+﻿#ifndef __ALEGG_INTERFACES_H__
 #define __ALEGG_INTERFACES_H__
 
 // {435F1D29-A21D-4A30-8D01-3EE4E73296EE}
@@ -20,7 +20,7 @@ DEFINE_GUID(IID_ISetItemText, 0xce1cfddd, 0x47ce, 0x48c3, 0xb9, 0xb, 0xfd, 0xdf,
 class DECLSPEC_UUID("CE1CFDDD-47CE-48C3-B90B-FDDFEC8A20FE") ISetItemText : public IUnknown
 {
 public:
-    virtual HRESULT STDMETHODCALLTYPE SetItemText(LPCTSTR text) = 0;
+    virtual HRESULT STDMETHODCALLTYPE SetItemText(LPCEGGTSTR text) = 0;
 };
 
 // {7E239124-A5F7-4B4A-896D-7C4FAD3422E5}

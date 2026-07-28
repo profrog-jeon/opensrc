@@ -1,4 +1,4 @@
-#ifndef __GENERIAL_FILE_STREAM_H__
+﻿#ifndef __GENERIAL_FILE_STREAM_H__
 #define __GENERIAL_FILE_STREAM_H__
 
 #include "IStream.h"
@@ -33,9 +33,9 @@ public:
     virtual HRESULT STDMETHODCALLTYPE SetModifiedTime(const LPFILETIME modifiedTime);
 #endif
 
-    bool Create(LPCTSTR path);
+    bool Create(LPCEGGTSTR path);
 #ifdef _WIN32
-    bool Open(LPCTSTR path);
+    bool Open(LPCEGGTSTR path);
 #endif
     void Close();
 
@@ -60,7 +60,7 @@ public:
     virtual HRESULT STDMETHODCALLTYPE Read(void *data, UInt32 size, UInt32 *processedSize);
     virtual HRESULT STDMETHODCALLTYPE Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newPosition);
 
-    bool Open(LPCTSTR path);
+    bool Open(LPCEGGTSTR path);
     void Close();
 
 private:

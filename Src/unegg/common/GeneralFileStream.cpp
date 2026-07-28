@@ -177,7 +177,7 @@ HRESULT COutGeneralFileStream::SetModifiedTime(const LPFILETIME modifiedTime)
 }
 #endif
 
-bool COutGeneralFileStream::Create(LPCTSTR path)
+bool COutGeneralFileStream::Create(LPCEGGTSTR path)
 {
     Close();
 #ifdef _WIN32
@@ -190,7 +190,7 @@ bool COutGeneralFileStream::Create(LPCTSTR path)
 }
 
 #ifdef _WIN32
-bool COutGeneralFileStream::Open(LPCTSTR path)
+bool COutGeneralFileStream::Open(LPCEGGTSTR path)
 {
     Close();
     file_ = CreateFile(path, GENERIC_WRITE, FILE_SHARE_READ | FILE_SHARE_WRITE, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
@@ -335,7 +335,7 @@ HRESULT CInGeneralFileStream::Seek(Int64 offset, UInt32 seekOrigin, UInt64 *newP
     return ret;
 }
 
-bool CInGeneralFileStream::Open(LPCTSTR path)
+bool CInGeneralFileStream::Open(LPCEGGTSTR path)
 {
     Close();
 #ifdef _WIN32

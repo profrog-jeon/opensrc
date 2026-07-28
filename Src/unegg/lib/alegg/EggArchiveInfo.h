@@ -84,9 +84,9 @@ namespace NArchive
             HRESULT LoadWindowsFileInformation(seven_istream& sis);
             HRESULT LoadEncryptInformation(seven_istream& sis);
 
-            int BuildZipCrypto(LPCTSTR password, EXTRACT_CALLBACK& callback);
-            int BuildAESCrypto(LPCTSTR password, EXTRACT_CALLBACK& callback);
-            int BuildLEACrypto(LPCTSTR password, EXTRACT_CALLBACK& callback);
+            int BuildZipCrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback);
+            int BuildAESCrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback);
+            int BuildLEACrypto(LPCEGGTSTR password, EXTRACT_CALLBACK& callback);
 
             DWORD index_;
             ULONGLONG size_;
@@ -95,7 +95,7 @@ namespace NArchive
             FILETIME lastModified_;
             DWORD attributes_;
             std::shared_ptr<ENCRYPT_INFO> encryption_;
-            std::basic_string<TCHAR> password_;
+            std::basic_string<EGG_TCHAR> password_;
             std::list<CBlockInfo> blocks_;
         };
 
@@ -137,8 +137,8 @@ namespace NArchive
 
             HRESULT GetVolumeStream(IInStream** inStream, unsigned long id, OPEN_CALLBACK& callback);
 
-            HRESULT FindArchiveName(unsigned long id, std::basic_string<TCHAR>& fileName, LPCTSTR folderPath);
-            HRESULT IsArchiveForId(LPCTSTR filePath, unsigned long id, bool* isMatched);
+            HRESULT FindArchiveName(unsigned long id, std::basic_string<EGG_TCHAR>& fileName, LPCEGGTSTR folderPath);
+            HRESULT IsArchiveForId(LPCEGGTSTR filePath, unsigned long id, bool* isMatched);
             HRESULT GetNextSplitId(IInStream* inStream, unsigned long* nextId);
 
             std::vector<CPackedFileInfo> files_;
@@ -147,7 +147,7 @@ namespace NArchive
             std::basic_string<WCHAR> comment_;
 
             CComPtr<IInStream> inStream_;
-            std::basic_string<TCHAR> archiveFolderPath_;
+            std::basic_string<EGG_TCHAR> archiveFolderPath_;
         };
     }
 }
