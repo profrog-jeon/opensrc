@@ -46,8 +46,7 @@ endfunction()
 add_subdirectory(sqlite3Lib)
 add_subdirectory(pcre2)
 add_subdirectory(unegg)
-
-extract_zip(bzip2-bzip2-1.0.8.zip bzip2)
+add_subdirectory(bzip2)
 copy_headers2(${CMAKE_SOURCE_DIR}/bzip2 ${CMAKE_SOURCE_DIR}/../Inc copy_bzip2_headers)
 
 
