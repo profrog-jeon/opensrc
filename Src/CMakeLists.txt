@@ -56,8 +56,6 @@ add_custom_target(liblzma ALL
     COMMAND ./configure
         --disable-shared
         --enable-static
-        --disable-xz
-        --disable-xzdec
         --disable-lzmadec
         --disable-lzmainfo
     COMMAND make -j8
@@ -117,9 +115,9 @@ set(ENABLE_OPENSSL ON CACHE BOOL "" FORCE)
 
 set(ZLIB_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
 set(BZIP2_INCLUDE_DIR    "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-set(LIBLZMA_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(LIBLZMA_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc/lzma" CACHE PATH "" FORCE)
 set(LZ4_INCLUDE_DIR      "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
-set(ZSTD_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
+set(ZSTD_INCLUDE_DIR     "${CMAKE_SOURCE_DIR}/../Inc/zstd" CACHE PATH "" FORCE)
 set(OPENSSL_INCLUDE_DIR  "${CMAKE_SOURCE_DIR}/../Inc" CACHE PATH "" FORCE)
 
 set(ZLIB_LIBRARY         "${OUTPUT_DIR}/libz.a" CACHE FILEPATH "" FORCE)
