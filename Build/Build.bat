@@ -1,16 +1,5 @@
 @ECHO OFF
 
-REM =======================================
-REM ===========  WINDOWS BUILD  ===========
-REM =======================================
-SET MSBUILD="C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Current\Bin\MSBuild.exe"
-SET SLNFILE=..\Src\_BuildAll.sln
-
-%MSBUILD% %SLNFILE% /m /t:Rebuild /p:Configuration=ReleaseMT;Platform=x64
-IF %ERRORLEVEL% NEQ 0 GOTO Error
-%MSBUILD% %SLNFILE% /m /t:Rebuild /p:Configuration=Release;Platform=x64
-IF %ERRORLEVEL% NEQ 0 GOTO Error
-
 REM =====================================
 REM ===========  LINUX BUILD  ===========
 REM =====================================
@@ -31,6 +20,17 @@ cd ..\Output\libarchive
 wsl cmake ../../Src/libarchive
 IF %ERRORLEVEL% NEQ 0 GOTO Error
 wsl cmake --build . --parallel 16
+IF %ERRORLEVEL% NEQ 0 GOTO Error
+
+REM =======================================
+REM ===========  WINDOWS BUILD  ===========
+REM =======================================
+SET MSBUILD="C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Current\Bin\MSBuild.exe"
+SET SLNFILE=..\Src\_BuildAll.sln
+
+%MSBUILD% %SLNFILE% /m /t:Rebuild /p:Configuration=ReleaseMT;Platform=x64
+IF %ERRORLEVEL% NEQ 0 GOTO Error
+%MSBUILD% %SLNFILE% /m /t:Rebuild /p:Configuration=Release;Platform=x64
 IF %ERRORLEVEL% NEQ 0 GOTO Error
 
 REM ===============================
