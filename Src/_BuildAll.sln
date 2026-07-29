@@ -34,7 +34,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pcre2W", "pcre2\pcre2W.vcxp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "unegg", "unegg\unegg.vcxproj", "{312F1377-40BD-4376-BC4D-F09FC40654B4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libyara", "yara-4.5.8\windows\libyara.vcxproj", "{E236CE39-D8F3-4DB6-985C-F2794FF17746}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libyara", "yara\libyara.vcxproj", "{E236CE39-D8F3-4DB6-985C-F2794FF17746}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,6 +7,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 
 function(extract_zip ZIPFILE DIRNAME)
 	message(STATUS "Extracting ${ZIPFILE}")
+	if(EXISTS "${CMAKE_SOURCE_DIR}/${DIRNAME}")
+        execute_process(
+            COMMAND ${CMAKE_COMMAND} -E rm -fR "${CMAKE_SOURCE_DIR}/${DIRNAME}"
+            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+            RESULT_VARIABLE ret
+        )
+	endif()
 	execute_process(
 		COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/${ZIPFILE}"
 		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
