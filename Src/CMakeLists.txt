@@ -98,3 +98,22 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/../Inc
     copy_lz4_headers
 )
+
+extract_zip(yara-4.5.8.zip yara-4.5.8)
+set(YARA_DIR "${CMAKE_SOURCE_DIR}/yara-4.5.8")
+add_custom_target(yara ALL
+    COMMAND ./build.sh
+        --disable-shared
+        --enable-static
+		--with-pic
+        --without-crypto
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${YARA_DIR}/.libs/libyara.a
+        ${OUTPUT_DIR}/libyara.a
+    WORKING_DIRECTORY ${YARA_DIR}
+)
+copy_headers(
+    ${YARA_DIR}/libyara/include
+    ${CMAKE_SOURCE_DIR}/../Inc
+    yara
+)
