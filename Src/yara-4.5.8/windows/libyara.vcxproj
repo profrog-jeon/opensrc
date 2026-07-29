@@ -94,33 +94,33 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetName>$(ProjectName)32</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>$(ProjectName)32</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <TargetName>$(ProjectName)32</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
     <TargetName>$(ProjectName)</TargetName>
-    <OutDir>$(ProjectDir)\..\..\Build\$(Platform)$(Configuration)\</OutDir>
-    <IntDir>$(ProjectDir)\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir>$(ProjectDir)\..\..\..\Build\$(Platform)$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)\..\..\..\Output\$(Platform)$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
