@@ -6,16 +6,14 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${OUTPUT_DIR})
 
 function(extract_zip ZIPFILE DIRNAME)
-    if(NOT EXISTS "${CMAKE_SOURCE_DIR}/${DIRNAME}")
-        message(STATUS "Extracting ${ZIPFILE}")
-        execute_process(
-            COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/${ZIPFILE}"
-            WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
-            RESULT_VARIABLE ret
-        )
-        if(NOT ret EQUAL 0)
-            message(FATAL_ERROR "Failed to extract ${ZIPFILE}")
-        endif()
+	message(STATUS "Extracting ${ZIPFILE}")
+	execute_process(
+		COMMAND ${CMAKE_COMMAND} -E tar xf "${CMAKE_SOURCE_DIR}/${ZIPFILE}"
+		WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+		RESULT_VARIABLE ret
+	)
+	if(NOT ret EQUAL 0)
+		message(FATAL_ERROR "Failed to extract ${ZIPFILE}")
     endif()
 endfunction()
 
