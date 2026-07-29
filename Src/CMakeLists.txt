@@ -56,6 +56,7 @@ execute_process(
     COMMAND ./configure
         --disable-shared
         --enable-static
+        --with-pic
         --disable-lzmadec
         --disable-lzmainfo
     WORKING_DIRECTORY ${LZMA_DIR}
