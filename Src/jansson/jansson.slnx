@@ -1,0 +1,11 @@
+
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug" />
+		<BuildType Name="DebugMT" />
+		<BuildType Name="Release" />
+		<BuildType Name="ReleaseMT" />
+		<Platform Name="x64" />
+	</Configurations>
+	<Project Path="jansson.vcxproj" Id="cb609f66-e0c8-3256-9b26-b089a9552b3f" />
+</Solution>

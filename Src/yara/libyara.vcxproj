@@ -328,6 +328,7 @@
     <ClCompile Include="..\yara-4.5.8\libyara\mem.c" />
     <ClCompile Include="..\yara-4.5.8\libyara\modules.c" />
     <ClCompile Include="..\yara-4.5.8\libyara\modules\console\console.c" />
+    <ClCompile Include="..\yara-4.5.8\libyara\modules\cuckoo\cuckoo.c" />
     <ClCompile Include="..\yara-4.5.8\libyara\modules\dex\dex.c" />
     <ClCompile Include="..\yara-4.5.8\libyara\modules\dotnet\dotnet.c" />
     <ClCompile Include="..\yara-4.5.8\libyara\modules\elf\elf.c" />
