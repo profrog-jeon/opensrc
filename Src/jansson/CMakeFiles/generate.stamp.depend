@@ -105,12 +105,12 @@ C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/Windows.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/Platform/WindowsPaths.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/TestBigEndian.cmake
 C:/Program Files/CMake/share/cmake-4.4/Modules/WriteBasicConfigVersionFile.cmake
-D:/GIT/opensrc/Src/jansson-2.15.1/CMakeLists.txt
-D:/GIT/opensrc/Src/jansson-2.15.1/cmake/CheckFunctionKeywords.cmake
-D:/GIT/opensrc/Src/jansson-2.15.1/cmake/janssonConfig.cmake.in
-D:/GIT/opensrc/Src/jansson-2.15.1/cmake/jansson_config.h.cmake
-D:/GIT/opensrc/Src/jansson-2.15.1/cmake/jansson_private_config.h.cmake
-D:/GIT/opensrc/Src/jansson-2.15.1/jansson.pc.in
-D:/GIT/opensrc/Src/jansson/CMakeFiles/4.4.1/CMakeCCompiler.cmake
-D:/GIT/opensrc/Src/jansson/CMakeFiles/4.4.1/CMakeRCCompiler.cmake
-D:/GIT/opensrc/Src/jansson/CMakeFiles/4.4.1/CMakeSystem.cmake
+../jansson-2.15.1/CMakeLists.txt
+../jansson-2.15.1/cmake/CheckFunctionKeywords.cmake
+../jansson-2.15.1/cmake/janssonConfig.cmake.in
+../jansson-2.15.1/cmake/jansson_config.h.cmake
+../jansson-2.15.1/cmake/jansson_private_config.h.cmake
+../jansson-2.15.1/jansson.pc.in
+CMakeFiles/4.4.1/CMakeCCompiler.cmake
+CMakeFiles/4.4.1/CMakeRCCompiler.cmake
+CMakeFiles/4.4.1/CMakeSystem.cmake

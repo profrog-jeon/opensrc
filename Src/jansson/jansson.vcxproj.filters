@@ -1,71 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\dtoa.c">
+    <ClCompile Include="..\jansson-2.15.1\src\dtoa.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\dump.c">
+    <ClCompile Include="..\jansson-2.15.1\src\dump.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\error.c">
+    <ClCompile Include="..\jansson-2.15.1\src\error.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\hashtable.c">
+    <ClCompile Include="..\jansson-2.15.1\src\hashtable.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\hashtable_seed.c">
+    <ClCompile Include="..\jansson-2.15.1\src\hashtable_seed.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\load.c">
+    <ClCompile Include="..\jansson-2.15.1\src\load.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\memory.c">
+    <ClCompile Include="..\jansson-2.15.1\src\memory.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\pack_unpack.c">
+    <ClCompile Include="..\jansson-2.15.1\src\pack_unpack.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\strbuffer.c">
+    <ClCompile Include="..\jansson-2.15.1\src\strbuffer.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\strconv.c">
+    <ClCompile Include="..\jansson-2.15.1\src\strconv.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\utf.c">
+    <ClCompile Include="..\jansson-2.15.1\src\utf.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\value.c">
+    <ClCompile Include="..\jansson-2.15.1\src\value.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
-    <ClCompile Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\version.c">
+    <ClCompile Include="..\jansson-2.15.1\src\version.c">
       <Filter>Library Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\hashtable.h">
+    <ClInclude Include="..\jansson-2.15.1\src\hashtable.h">
       <Filter>Library Private Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\jansson_private.h">
+    <ClInclude Include="..\jansson-2.15.1\src\jansson_private.h">
       <Filter>Library Private Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\strbuffer.h">
+    <ClInclude Include="..\jansson-2.15.1\src\strbuffer.h">
       <Filter>Library Private Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\utf.h">
+    <ClInclude Include="..\jansson-2.15.1\src\utf.h">
       <Filter>Library Private Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson\private_include\jansson_private_config.h">
+    <ClInclude Include="private_include\jansson_private_config.h">
       <Filter>Library Private Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson\include\jansson_config.h">
+    <ClInclude Include="include\jansson_config.h">
       <Filter>Library Public Headers</Filter>
     </ClInclude>
-    <ClInclude Include="D:\GIT\opensrc\Src\jansson-2.15.1\src\jansson.h">
+    <ClInclude Include="..\jansson-2.15.1\src\jansson.h">
       <Filter>Library Public Headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\GIT\opensrc\Src\jansson-2.15.1\CMakeLists.txt" />
+    <CustomBuild Include="..\jansson-2.15.1\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Library Private Headers">
