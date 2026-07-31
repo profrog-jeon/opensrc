@@ -117,10 +117,10 @@ add_custom_target(jansson ALL
         ${JANSSON_DIR}/src/.libs/libjansson.a
         ${OUTPUT_DIR}/libjansson.a
     COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_SOURCE_DIR}/../Inc/jansson-linux"
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    COMMAND ${CMAKE_COMMAND} -E rename
         ${JANSSON_DIR}/src/jansson.h
         ${CMAKE_SOURCE_DIR}/../Inc/jansson-linux/jansson.h
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+    COMMAND ${CMAKE_COMMAND} -E rename
         ${JANSSON_DIR}/src/jansson_config.h
         ${CMAKE_SOURCE_DIR}/../Inc/jansson-linux/jansson_config.h
     WORKING_DIRECTORY ${JANSSON_DIR}
