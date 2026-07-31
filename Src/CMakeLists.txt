@@ -104,6 +104,28 @@ copy_headers2(
     copy_lz4_headers
 )
 
+extract_zip(jansson-2.15.1.zip jansson-2.15.1)
+set(JANSSON_DIR "${CMAKE_SOURCE_DIR}/jansson-2.15.1")
+add_custom_target(jansson ALL
+    COMMAND autoreconf -fi
+    COMMAND ./configure
+        --disable-shared
+        --enable-static
+        --with-pic
+    COMMAND make -j8
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${JANSSON_DIR}/src/.libs/libjansson.a
+        ${OUTPUT_DIR}/libjansson.a
+    COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_SOURCE_DIR}/../Inc/jansson-linux"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${JANSSON_DIR}/src/jansson.h
+        ${CMAKE_SOURCE_DIR}/../Inc/jansson-linux/jansson.h
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${JANSSON_DIR}/src/jansson_config.h
+        ${CMAKE_SOURCE_DIR}/../Inc/jansson-linux/jansson_config.h
+    WORKING_DIRECTORY ${JANSSON_DIR}
+)
+
 extract_zip(yara-4.5.8.zip yara-4.5.8)
 set(YARA_DIR "${CMAKE_SOURCE_DIR}/yara-4.5.8")
 add_custom_target(yara ALL
