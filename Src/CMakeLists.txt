@@ -155,6 +155,12 @@ set(MZ_LZMA OFF CACHE BOOL "" FORCE)
 set(MZ_ZSTD OFF CACHE BOOL "" FORCE)
 set(MZ_PPMD OFF CACHE BOOL "" FORCE)
 set(MZ_OPENSSL ON CACHE BOOL "" FORCE)
+# Point find_package(OpenSSL) at the OpenSSL already built into this project
+# instead of a system install (Inc/openssl headers, Build/LinuxRelease static libs).
+set(OPENSSL_USE_STATIC_LIBS ON)
+set(OPENSSL_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../Inc CACHE PATH "" FORCE)
+set(OPENSSL_CRYPTO_LIBRARY ${OUTPUT_DIR}/libcrypto.a CACHE FILEPATH "" FORCE)
+set(OPENSSL_SSL_LIBRARY ${OUTPUT_DIR}/libssl.a CACHE FILEPATH "" FORCE)
 add_subdirectory(minizip-ng-develop)
 copy_headers2(
     ${CMAKE_SOURCE_DIR}/minizip-ng-develop
