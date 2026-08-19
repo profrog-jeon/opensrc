@@ -146,3 +146,17 @@ copy_headers(
     ${CMAKE_SOURCE_DIR}/../Inc
     yara
 )
+
+extract_zip(minizip-ng-develop.zip minizip-ng-develop)
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+set(MZ_ZLIB ON CACHE BOOL "" FORCE)
+set(MZ_BZIP2 OFF CACHE BOOL "" FORCE)
+set(MZ_LZMA OFF CACHE BOOL "" FORCE)
+set(MZ_ZSTD OFF CACHE BOOL "" FORCE)
+set(MZ_OPENSSL ON CACHE BOOL "" FORCE)
+add_subdirectory(minizip-ng-develop)
+copy_headers2(
+    ${CMAKE_SOURCE_DIR}/minizip-ng-develop
+    ${CMAKE_SOURCE_DIR}/../Inc/minizip
+    copy_minizip_headers
+)
