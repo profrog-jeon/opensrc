@@ -167,3 +167,61 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/../Inc/minizip
     copy_minizip_headers
 )
+
+extract_zip(opencv-4.12.0.zip opencv-4.12.0)
+set(OPENCV_DIR "${CMAKE_SOURCE_DIR}/opencv-4.12.0")
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+# QR 코드 디코딩(objdetect의 QRCodeDetector)에 필요한 모듈만 빌드한다.
+# objdetect -> calib3d -> features2d, flann 이 강제 의존성이라 이 7개가 최소 집합이다.
+set(BUILD_LIST "core,imgproc,imgcodecs,flann,features2d,calib3d,objdetect" CACHE STRING "" FORCE)
+set(BUILD_opencv_world OFF CACHE BOOL "" FORCE)
+set(BUILD_opencv_apps OFF CACHE BOOL "" FORCE)
+set(BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(BUILD_PERF_TESTS OFF CACHE BOOL "" FORCE)
+set(BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(BUILD_JAVA OFF CACHE BOOL "" FORCE)
+set(BUILD_opencv_python2 OFF CACHE BOOL "" FORCE)
+set(BUILD_opencv_python3 OFF CACHE BOOL "" FORCE)
+# 주요 이미지 포맷(PNG/JPEG/TIFF/WEBP/JPEG2000)은 켜고, GUI/비디오 등
+# QR 디코딩과 무관한 백엔드 의존성만 끈다. BMP/GIF는 별도 라이브러리 없이
+# imgcodecs 자체에 내장되어 있어 항상 지원된다.
+set(WITH_PNG ON CACHE BOOL "" FORCE)
+set(WITH_JPEG ON CACHE BOOL "" FORCE)
+set(WITH_TIFF ON CACHE BOOL "" FORCE)
+set(WITH_WEBP ON CACHE BOOL "" FORCE)
+set(WITH_OPENJPEG ON CACHE BOOL "" FORCE)
+set(WITH_OPENEXR OFF CACHE BOOL "" FORCE)
+set(WITH_JASPER OFF CACHE BOOL "" FORCE)
+set(WITH_FFMPEG OFF CACHE BOOL "" FORCE)
+set(WITH_GTK OFF CACHE BOOL "" FORCE)
+set(WITH_QT OFF CACHE BOOL "" FORCE)
+set(WITH_V4L OFF CACHE BOOL "" FORCE)
+set(WITH_1394 OFF CACHE BOOL "" FORCE)
+set(WITH_CUDA OFF CACHE BOOL "" FORCE)
+set(WITH_OPENCL OFF CACHE BOOL "" FORCE)
+set(WITH_TBB OFF CACHE BOOL "" FORCE)
+set(WITH_IPP OFF CACHE BOOL "" FORCE)
+set(WITH_ITT OFF CACHE BOOL "" FORCE)
+set(WITH_PROTOBUF OFF CACHE BOOL "" FORCE)
+add_subdirectory(opencv-4.12.0)
+
+# 공개 헤더는 모듈별 include 디렉터리와, CMake가 빌드 시점에 생성하는
+# opencv2/opencv_modules.hpp 등 두 군데에 나뉘어 있어 각각 복사한다.
+copy_headers2(
+    ${OPENCV_DIR}/include
+    ${CMAKE_SOURCE_DIR}/../Inc
+    copy_opencv_umbrella_headers
+)
+foreach(OPENCV_MOD core imgproc imgcodecs flann features2d calib3d objdetect)
+    copy_headers2(
+        ${OPENCV_DIR}/modules/${OPENCV_MOD}/include
+        ${CMAKE_SOURCE_DIR}/../Inc
+        copy_opencv_${OPENCV_MOD}_headers
+    )
+endforeach()
+copy_headers2(
+    ${CMAKE_BINARY_DIR}/opencv2
+    ${CMAKE_SOURCE_DIR}/../Inc/opencv2
+    copy_opencv_generated_headers
+)
