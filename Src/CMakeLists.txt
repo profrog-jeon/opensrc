@@ -206,6 +206,22 @@ set(WITH_ITT OFF CACHE BOOL "" FORCE)
 set(WITH_PROTOBUF OFF CACHE BOOL "" FORCE)
 add_subdirectory(opencv-4.12.0)
 
+# OpenCV는 CMAKE_ARCHIVE_OUTPUT_DIRECTORY를 자체적으로
+# ${CMAKE_CURRENT_BINARY_DIR}/lib, .../3rdparty/lib 로 덮어써서 라이브러리가
+# OUTPUT_DIR이 아니라 빌드 디렉터리 안에 그대로 남는다. 모든 대상 라이브러리가
+# 만들어진 뒤 OUTPUT_DIR로 복사해준다.
+add_custom_target(copy_opencv_libs ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_BINARY_DIR}/opencv-4.12.0/lib ${OUTPUT_DIR}
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_BINARY_DIR}/opencv-4.12.0/3rdparty/lib ${OUTPUT_DIR}
+)
+add_dependencies(copy_opencv_libs
+    opencv_core opencv_imgproc opencv_imgcodecs opencv_flann
+    opencv_features2d opencv_calib3d opencv_objdetect
+    libpng libtiff libwebp libopenjp2 libjpeg-turbo
+)
+
 # 공개 헤더는 모듈별 include 디렉터리와, CMake가 빌드 시점에 생성하는
 # opencv2/opencv_modules.hpp 등 두 군데에 나뉘어 있어 각각 복사한다.
 copy_headers2(
