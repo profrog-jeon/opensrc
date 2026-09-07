@@ -25,7 +25,7 @@ function(extract_zip ZIPFILE DIRNAME)
 endfunction()
 
 function(copy_headers SOURCE_DIR DEST_DIR TARGET)
-    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h")
+    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h" "${SOURCE_DIR}/*.hpp")
     foreach(header ${HEADER_FILES})
         file(RELATIVE_PATH REL_PATH "${SOURCE_DIR}" "${header}")	# SOURCE_DIR 기준의 상대 경로
         get_filename_component(REL_DIR "${REL_PATH}" DIRECTORY)		# 상대 경로에서 디렉터리만 추출
@@ -37,7 +37,7 @@ function(copy_headers SOURCE_DIR DEST_DIR TARGET)
 endfunction()
 
 function(copy_headers2 SOURCE_DIR DEST_DIR TARGET_NAME)
-    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h")
+    file(GLOB_RECURSE HEADER_FILES CONFIGURE_DEPENDS "${SOURCE_DIR}/*.h" "${SOURCE_DIR}/*.hpp")
     add_custom_target(${TARGET_NAME} ALL)
     foreach(header ${HEADER_FILES})
         file(RELATIVE_PATH REL_PATH "${SOURCE_DIR}" "${header}")
