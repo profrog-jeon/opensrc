@@ -170,10 +170,18 @@ copy_headers2(
 
 extract_zip(opencv-4.12.0.zip opencv-4.12.0)
 set(OPENCV_DIR "${CMAKE_SOURCE_DIR}/opencv-4.12.0")
+
+extract_zip(opencv_contrib-4.12.0.zip opencv_contrib-4.12.0)
+set(OPENCV_CONTRIB_DIR "${CMAKE_SOURCE_DIR}/opencv_contrib-4.12.0")
+set(OPENCV_EXTRA_MODULES_PATH "${OPENCV_CONTRIB_DIR}/modules" CACHE PATH "" FORCE)
+
 set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
-# QR 코드 디코딩(objdetect의 QRCodeDetector)에 필요한 모듈만 빌드한다.
-# objdetect -> calib3d -> features2d, flann 이 강제 의존성이라 이 7개가 최소 집합이다.
-set(BUILD_LIST "core,imgproc,imgcodecs,flann,features2d,calib3d,objdetect" CACHE STRING "" FORCE)
+# QR 코드 디코딩(objdetect의 QRCodeDetector, wechat_qrcode)에 필요한 모듈만 빌드한다.
+# objdetect -> calib3d -> features2d, flann 이 강제 의존성이고, wechat_qrcode는
+# opencv_contrib 모듈로 opencv_dnn에 의존한다.
+set(BUILD_LIST "core,imgproc,imgcodecs,objdetect,calib3d,features2d,flann,dnn,wechat_qrcode,highgui" CACHE STRING "" FORCE)
+set(BUILD_opencv_wechat_qrcode ON CACHE BOOL "" FORCE)
+set(BUILD_opencv_dnn ON CACHE BOOL "" FORCE)
 set(BUILD_opencv_world OFF CACHE BOOL "" FORCE)
 set(BUILD_opencv_apps OFF CACHE BOOL "" FORCE)
 set(BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -203,7 +211,8 @@ set(WITH_OPENCL OFF CACHE BOOL "" FORCE)
 set(WITH_TBB OFF CACHE BOOL "" FORCE)
 set(WITH_IPP OFF CACHE BOOL "" FORCE)
 set(WITH_ITT OFF CACHE BOOL "" FORCE)
-set(WITH_PROTOBUF OFF CACHE BOOL "" FORCE)
+# dnn / wechat_qrcode가 caffe 모델(prototxt+caffemodel)을 읽는 데 필요하다.
+set(WITH_PROTOBUF ON CACHE BOOL "" FORCE)
 add_subdirectory(opencv-4.12.0)
 
 # OpenCV는 CMAKE_ARCHIVE_OUTPUT_DIRECTORY를 자체적으로
@@ -219,7 +228,8 @@ add_custom_target(copy_opencv_libs ALL
 add_dependencies(copy_opencv_libs
     opencv_core opencv_imgproc opencv_imgcodecs opencv_flann
     opencv_features2d opencv_calib3d opencv_objdetect
-    libpng libtiff libwebp libopenjp2 libjpeg-turbo
+    opencv_dnn opencv_wechat_qrcode opencv_highgui
+    libpng libtiff libwebp libopenjp2 libjpeg-turbo libprotobuf
 )
 
 # 공개 헤더는 모듈별 include 디렉터리와, CMake가 빌드 시점에 생성하는
@@ -229,13 +239,19 @@ copy_headers2(
     ${CMAKE_SOURCE_DIR}/../Inc
     copy_opencv_umbrella_headers
 )
-foreach(OPENCV_MOD core imgproc imgcodecs flann features2d calib3d objdetect)
+foreach(OPENCV_MOD core imgproc imgcodecs flann features2d calib3d objdetect dnn highgui)
     copy_headers2(
         ${OPENCV_DIR}/modules/${OPENCV_MOD}/include
         ${CMAKE_SOURCE_DIR}/../Inc
         copy_opencv_${OPENCV_MOD}_headers
     )
 endforeach()
+# wechat_qrcode는 opencv_contrib 쪽에 있어 소스 위치가 다르다.
+copy_headers2(
+    ${OPENCV_CONTRIB_DIR}/modules/wechat_qrcode/include
+    ${CMAKE_SOURCE_DIR}/../Inc
+    copy_opencv_wechat_qrcode_headers
+)
 copy_headers2(
     ${CMAKE_BINARY_DIR}/opencv2
     ${CMAKE_SOURCE_DIR}/../Inc/opencv2
