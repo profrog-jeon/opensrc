@@ -1,0 +1,7 @@
+cmake -S D:\GIT\opensrc\Src\opencv-4.12.0 -B D:\GIT\opensrc\Src\opencv-4.12.0\build-win -A x64  -DOPENCV_EXTRA_MODULES_PATH=D:\GIT\opensrc\Src\opencv_contrib-4.12.0\modules  -DBUILD_opencv_world=ON  -DBUILD_opencv_wechat_qrcode=ON  -DBUILD_opencv_dnn=ON  -DBUILD_LIST=core,imgproc,imgcodecs,objdetect,calib3d,features2d,flann,dnn,wechat_qrcode,highgui,world  -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_opencv_python2=OFF -DBUILD_opencv_python3=OFF -DBUILD_opencv_java=OFF
+
+
+
+cmake --build D:\GIT\opensrc\Src\opencv-4.12.0\build-win --config Debug
+
+cmake --build D:\GIT\opensrc\Src\opencv-4.12.0\build-win --config Release
