@@ -215,6 +215,11 @@ set(WITH_ITT OFF CACHE BOOL "" FORCE)
 set(WITH_PROTOBUF ON CACHE BOOL "" FORCE)
 add_subdirectory(opencv-4.12.0)
 
+# libpng이 오류/경고 처리 시 stderr로 콘솔 메시지를 출력하지 않도록 한다.
+if(TARGET libpng)
+    target_compile_definitions(libpng PRIVATE PNG_NO_CONSOLE_IO PNG_NO_WARNINGS)
+endif()
+
 # OpenCV는 CMAKE_ARCHIVE_OUTPUT_DIRECTORY를 자체적으로
 # ${CMAKE_CURRENT_BINARY_DIR}/lib, .../3rdparty/lib 로 덮어써서 라이브러리가
 # OUTPUT_DIR이 아니라 빌드 디렉터리 안에 그대로 남는다. 모든 대상 라이브러리가
