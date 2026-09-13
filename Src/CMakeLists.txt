@@ -171,6 +171,16 @@ copy_headers2(
 extract_zip(opencv-4.12.0.zip opencv-4.12.0)
 set(OPENCV_DIR "${CMAKE_SOURCE_DIR}/opencv-4.12.0")
 
+# 번들 libpng의 pnglibconf.h는 매 빌드마다 새로 생성되는 게 아니라 미리
+# 고정되어 커밋된 헤더라, target_compile_definitions로 PNG_NO_WARNINGS /
+# PNG_NO_CONSOLE_IO를 줘도 조건부 가드가 없어 무시된다. sBIT/iCCP 등
+# libpng 경고(stderr)를 없애려면 이 헤더에서 직접 SUPPORTED 매크로를 꺼야 한다.
+set(PNGLIBCONF_H "${OPENCV_DIR}/3rdparty/libpng/pnglibconf.h")
+file(READ "${PNGLIBCONF_H}" PNGLIBCONF_CONTENTS)
+string(REPLACE "#define PNG_WARNINGS_SUPPORTED" "/*#undef PNG_WARNINGS_SUPPORTED*/" PNGLIBCONF_CONTENTS "${PNGLIBCONF_CONTENTS}")
+string(REPLACE "#define PNG_CONSOLE_IO_SUPPORTED" "/*#undef PNG_CONSOLE_IO_SUPPORTED*/" PNGLIBCONF_CONTENTS "${PNGLIBCONF_CONTENTS}")
+file(WRITE "${PNGLIBCONF_H}" "${PNGLIBCONF_CONTENTS}")
+
 extract_zip(opencv_contrib-4.12.0.zip opencv_contrib-4.12.0)
 set(OPENCV_CONTRIB_DIR "${CMAKE_SOURCE_DIR}/opencv_contrib-4.12.0")
 set(OPENCV_EXTRA_MODULES_PATH "${OPENCV_CONTRIB_DIR}/modules" CACHE PATH "" FORCE)
@@ -214,11 +224,6 @@ set(WITH_ITT OFF CACHE BOOL "" FORCE)
 # dnn / wechat_qrcode가 caffe 모델(prototxt+caffemodel)을 읽는 데 필요하다.
 set(WITH_PROTOBUF ON CACHE BOOL "" FORCE)
 add_subdirectory(opencv-4.12.0)
-
-# libpng이 오류/경고 처리 시 stderr로 콘솔 메시지를 출력하지 않도록 한다.
-if(TARGET libpng)
-    target_compile_definitions(libpng PRIVATE PNG_NO_CONSOLE_IO PNG_NO_WARNINGS)
-endif()
 
 # OpenCV는 CMAKE_ARCHIVE_OUTPUT_DIRECTORY를 자체적으로
 # ${CMAKE_CURRENT_BINARY_DIR}/lib, .../3rdparty/lib 로 덮어써서 라이브러리가
